@@ -32,4 +32,9 @@ export const DOM_VAR = {
   // Result section
   resultsSection: document.querySelector(".results-section"),
   playAgainBtn: document.querySelector(".play-again"),
+
+  countDownClock: document.querySelector(".count-down-clock"),
+  reluseBtn: document.querySelector(".reluse-btn"),
+  ruelsDescription: document.querySelector(".ruels-description"),
+  closeRulesBtn: document.querySelector(".close-rules-btn"),
 };
