@@ -1,194 +1,89 @@
 // CONNECTION WITH DOM
-
-// welcome page section
-const startBtn = document.querySelector(".start-btn");
-const welcomePageSection = document.querySelector(".welcome-page-section");
-const chooseTopicSection = document.querySelector(".choose-topic-section");
-// choose topic section
-const topics = document.querySelector(".topics-container");
-const goToTheComplexitySectionBtn = document.querySelector(
-  ".go-to-the-complexity-section-btn",
-);
-const topicBtns = document.querySelectorAll(".topic-btn");
-// choose complexity level section
-const backToTheTopicsBtn = document.querySelector(".back-to-the-topics-btn");
-const startQuiz = document.querySelector(".start-quiz");
-const complexityBtnsContainer = document.querySelector(
-  ".complexity-btns-container",
-);
-const complexitySection = document.querySelector(".complexity-section");
-const complexityButtons = document.querySelectorAll(".complexity-btn");
-
-// quiz section
-const quizSection = document.querySelector(".quiz-section");
-const quizInfoTopic = document.querySelector(".quiz-info-topic");
-const quizInfoLevel = document.querySelector(".quiz-info-level");
-
-const numberOfQuestion = document.querySelector(".number-of-question");
-const questionHeader = document.querySelector(".question-header");
-const answersOptionsArray = document.querySelectorAll(".option");
-const answersOptionContainer = document.querySelector(
-  ".answers-option-container",
-);
-// const nextQuestionBtn = document.querySelector(".next-question-btn");
-// const finishBtn = document.querySelector(".finish-btn");
-const userPoints = document.querySelector(".user-points");
-
-// Result section
-const resultsSection = document.querySelector(".results-section");
-const playAgainBtn = document.querySelector(".play-again");
-
+import { DOM_VAR } from "./dom-variables.js";
 // GENERAL VARIABLES AND STARTING VALUES
-
-const USER_CHOICE = {
-  topic: null,
-  complexity: null,
-  easyTimeLimit: 10,
-  mediumTimeLimit: 7,
-  hardTimeLimit: 2,
-};
-const quizTopicsArray = ["front-end", "pop-culture", "random"];
-const quizComplexityArray = ["easy", "medium", "hard"];
-
-let usersAnswersForquestions = [];
-let questionNumber = 0;
-
+import { GEN_VAR } from "./general-variables.js";
 // START FUNCTIONS SECTION----------------------------------
-function hideAndRemoveClassNames(addClassName, removeClassName) {
-  addClassName.classList.add("hide");
-  removeClassName.classList.remove("hide");
-}
-function userIsChoosingTopicAndComplexity(event, array, key, btn) {
-  let usersClick = event.target;
-  let hidebtn = false;
-
-  for (let i = 0; i < array.length; i++) {
-    if (usersClick.classList.contains(array[i])) {
-      USER_CHOICE[`${key}`] = array[i];
-
-      hidebtn = true;
-
-      break;
-    } else {
-      hidebtn = false;
-    }
-  }
-  if (hidebtn === true) {
-    btn.classList.remove("hide");
-  } else {
-    btn.classList.add("hide");
-  }
-}
-
-function getRandomNumber(max) {
-  let min = 1;
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
-function insertingDataIntoHTMLTag(array, arrayElementIndex) {
-  numberOfQuestion.textContent = questionNumber + 1;
-  questionHeader.textContent = array[arrayElementIndex].question;
-  answersOptionsArray.forEach((element, index) => {
-    element.textContent = array[arrayElementIndex].options[index];
-  });
-}
-function getResults(array) {
-  let countCorrectAnswers = 0;
-  array.forEach((element) => {
-    if (element === "correct") {
-      countCorrectAnswers++;
-    }
-  });
-  return countCorrectAnswers;
-}
-function applyActiveClassToClickedButton(event, elementClassName, buttons) {
-  let clicked = event.target;
-  if (clicked.classList.contains(elementClassName)) {
-    buttons.forEach((element) => {
-      element.classList.remove("active-btn");
-    });
-    clicked.classList.add("active-btn");
-  } else {
-    return;
-  }
-}
-function nextQuestion() {
-  questionNumber++;
-  dataClone.splice(index, 1);
-  console.log(dataClone.length);
-  console.log(usersAnswersForquestions);
-  randomNumber = getRandomNumber(dataClone.length);
-  index = randomNumber - 1;
-  console.log(randomNumber);
-  answersOptionsArray.forEach((element) => {
-    element.classList.remove("correct-answer");
-    element.classList.remove("wrong-answer");
-    element.disabled = false;
-  });
-  insertingDataIntoHTMLTag(dataClone, index);
-}
-function lastQuestion() {
-  userPoints.textContent = getResults(usersAnswersForquestions);
-  hideAndRemoveClassNames(quizSection, resultsSection);
-  clearInterval(timer);
-}
-
+import {
+  hideAndRemoveClassNames,
+  userIsChoosingTopicAndComplexity,
+  getRandomNumber,
+  insertingDataIntoHTMLTag,
+  getResults,
+  applyActiveClassToClickedButton,
+  nextQuestion,
+  lastQuestion,
+} from "./functions.js";
 // END FUNCTIONS SECTION------------------------------------
 
 // Welcome page section script
-startBtn.addEventListener("click", () => {
-  hideAndRemoveClassNames(welcomePageSection, chooseTopicSection);
+DOM_VAR.startBtn.addEventListener("click", () => {
+  hideAndRemoveClassNames(
+    DOM_VAR.welcomePageSection,
+    DOM_VAR.chooseTopicSection,
+  );
   console.log(
     JSON.parse(localStorage.getItem("arrayOfResultsInLocalStorage")) || {},
   );
 });
 
 // Topic section script
-topics.addEventListener("click", (event) => {
+DOM_VAR.topics.addEventListener("click", (event) => {
   userIsChoosingTopicAndComplexity(
     event,
-    quizTopicsArray,
+    GEN_VAR.quizTopicsArray,
     "topic",
-    goToTheComplexitySectionBtn,
+    DOM_VAR.goToTheComplexitySectionBtn,
   );
 });
 
-goToTheComplexitySectionBtn.addEventListener("click", () => {
-  hideAndRemoveClassNames(chooseTopicSection, complexitySection);
+DOM_VAR.goToTheComplexitySectionBtn.addEventListener("click", () => {
+  hideAndRemoveClassNames(
+    DOM_VAR.chooseTopicSection,
+    DOM_VAR.complexitySection,
+  );
 });
-topics.addEventListener("click", (event) => {
-  applyActiveClassToClickedButton(event, "topic-btn", topicBtns);
+DOM_VAR.topics.addEventListener("click", (event) => {
+  applyActiveClassToClickedButton(event, "topic-btn", DOM_VAR.topicBtns);
 });
 
 // Complexity section script
-backToTheTopicsBtn.addEventListener("click", () => {
-  hideAndRemoveClassNames(complexitySection, chooseTopicSection);
-});
-
-complexityBtnsContainer.addEventListener("click", (event) => {
-  userIsChoosingTopicAndComplexity(
-    event,
-    quizComplexityArray,
-    "complexity",
-    startQuiz,
+DOM_VAR.backToTheTopicsBtn.addEventListener("click", () => {
+  hideAndRemoveClassNames(
+    DOM_VAR.complexitySection,
+    DOM_VAR.chooseTopicSection,
   );
 });
-complexityBtnsContainer.addEventListener("click", (event) => {
-  applyActiveClassToClickedButton(event, "complexity-btn", complexityButtons);
+
+DOM_VAR.complexityBtnsContainer.addEventListener("click", (event) => {
+  userIsChoosingTopicAndComplexity(
+    event,
+    GEN_VAR.quizComplexityArray,
+    "complexity",
+    DOM_VAR.startQuiz,
+  );
+});
+DOM_VAR.complexityBtnsContainer.addEventListener("click", (event) => {
+  applyActiveClassToClickedButton(
+    event,
+    "complexity-btn",
+    DOM_VAR.complexityButtons,
+  );
 });
 
-startQuiz.addEventListener("click", () => {
-  quizSection.classList.remove("hide");
-  complexitySection.classList.add("hide");
-  console.log(USER_CHOICE);
-  quizInfoTopic.textContent = USER_CHOICE.topic;
-  quizInfoLevel.textContent = USER_CHOICE.complexity;
+DOM_VAR.startQuiz.addEventListener("click", () => {
+  DOM_VAR.quizSection.classList.remove("hide");
+  DOM_VAR.complexitySection.classList.add("hide");
+  console.log(GEN_VAR.USER_CHOICE);
+  DOM_VAR.quizInfoTopic.textContent = GEN_VAR.USER_CHOICE.topic;
+  DOM_VAR.quizInfoLevel.textContent = GEN_VAR.USER_CHOICE.complexity;
   getQuestion();
-  if (USER_CHOICE.complexity === "easy") {
-    timeLimitation = USER_CHOICE.easyTimeLimit - 1;
-  } else if (USER_CHOICE.complexity === "medium") {
-    timeLimitation = USER_CHOICE.mediumTimeLimit - 1;
-  } else if (USER_CHOICE.complexity === "hard") {
-    timeLimitation = USER_CHOICE.hardTimeLimit - 1;
+  let timeLimitation = 0;
+  if (GEN_VAR.USER_CHOICE.complexity === "easy") {
+    timeLimitation = GEN_VAR.USER_CHOICE.easyTimeLimit - 1;
+  } else if (GEN_VAR.USER_CHOICE.complexity === "medium") {
+    timeLimitation = GEN_VAR.USER_CHOICE.mediumTimeLimit - 1;
+  } else if (GEN_VAR.USER_CHOICE.complexity === "hard") {
+    timeLimitation = GEN_VAR.USER_CHOICE.hardTimeLimit - 1;
   }
 
   startTimer(timeLimitation);
@@ -199,30 +94,28 @@ startQuiz.addEventListener("click", () => {
 let time = null;
 const countDownClock = document.querySelector(".count-down-clock");
 
-let timer = null;
-let minutes = 0;
-let seconds = 59;
-
 function startTimer(selectedMinutes) {
-  if (timer) {
-    clearInterval(timer);
+  if (GEN_VAR.timer) {
+    clearInterval(GEN_VAR.timer);
   }
 
-  minutes = selectedMinutes;
-  seconds = 59;
+  GEN_VAR.minutes = selectedMinutes;
+  GEN_VAR.seconds = 59;
 
   updateCountDown();
-  timer = setInterval(updateCountDown, 1000);
+  GEN_VAR.timer = setInterval(updateCountDown, 1000);
 }
 function updateCountDown() {
-  countDownClock.textContent = `${minutes < 10 ? "0" + minutes : minutes}:${seconds < 10 ? "0" + seconds : seconds}`;
+  countDownClock.textContent = `${GEN_VAR.minutes < 10 ? "0" + GEN_VAR.minutes : GEN_VAR.minutes}:${GEN_VAR.seconds < 10 ? "0" + GEN_VAR.seconds : GEN_VAR.seconds}`;
 
-  if (minutes === 0 && seconds === 0) {
-    userPoints.textContent = getResults(usersAnswersForquestions);
+  if (GEN_VAR.minutes === 0 && GEN_VAR.seconds === 0) {
+    DOM_VAR.userPoints.textContent = getResults(
+      GEN_VAR.usersAnswersForquestions,
+    );
     let historyOfResultsFromLocalStorage =
       JSON.parse(localStorage.getItem("arrayOfResultsInLocalStorage")) ||
       historyOfResults;
-    for (i in historyOfResults) {
+    for (let i in historyOfResults) {
       console.log(i);
       if (historyOfResultsFromLocalStorage[`${i}`] !== null) {
         let topicLevel = document.querySelector(`.${i}`);
@@ -233,7 +126,7 @@ function updateCountDown() {
       }
     }
     let topicLevel = document.querySelector(
-      `.${USER_CHOICE.topic}-${USER_CHOICE.complexity}`,
+      `.${GEN_VAR.USER_CHOICE.topic}-${GEN_VAR.USER_CHOICE.complexity}`,
     );
     console.log(topicLevel);
 
@@ -242,32 +135,32 @@ function updateCountDown() {
     let userScore = topicLevel.querySelector(".user-score");
     console.log(userScore);
 
-    let key = `${USER_CHOICE.topic}-${USER_CHOICE.complexity}`;
+    let key = `${GEN_VAR.USER_CHOICE.topic}-${GEN_VAR.USER_CHOICE.complexity}`;
     console.log(historyOfResultsFromLocalStorage[key]);
     if (historyOfResultsFromLocalStorage[key] === null) {
       console.log("it's null");
       historyOfResultsFromLocalStorage[key] = getResults(
-        usersAnswersForquestions,
+        GEN_VAR.usersAnswersForquestions,
       );
     } else {
       console.log("it's NOT null");
 
       if (
         historyOfResultsFromLocalStorage[key] >
-        getResults(usersAnswersForquestions)
+        getResults(GEN_VAR.usersAnswersForquestions)
       ) {
         historyOfResultsFromLocalStorage[key] =
           historyOfResultsFromLocalStorage[key];
       } else if (
         historyOfResultsFromLocalStorage[key] ===
-        getResults(usersAnswersForquestions)
+        getResults(GEN_VAR.usersAnswersForquestions)
       ) {
         historyOfResultsFromLocalStorage[key] = getResults(
-          usersAnswersForquestions,
+          GEN_VAR.usersAnswersForquestions,
         );
       } else {
         historyOfResultsFromLocalStorage[key] = getResults(
-          usersAnswersForquestions,
+          GEN_VAR.usersAnswersForquestions,
         );
       }
     }
@@ -284,52 +177,48 @@ function updateCountDown() {
     userScore.textContent = array[key];
 
     countDownClock.textContent = "Time is up!";
-    clearInterval(timer);
-    hideAndRemoveClassNames(quizSection, resultsSection);
+    clearInterval(GEN_VAR.timer);
+    hideAndRemoveClassNames(DOM_VAR.quizSection, DOM_VAR.resultsSection);
     return;
   }
 
-  if (seconds === 0) {
-    seconds = 59;
-    minutes--;
+  if (GEN_VAR.seconds === 0) {
+    GEN_VAR.seconds = 59;
+    GEN_VAR.minutes--;
   } else {
-    seconds--;
+    GEN_VAR.seconds--;
   }
 }
 
-let dataClone = [];
-let index = 0;
-let randomNumber = 0;
-let quantityOfQuestions = null;
-
 async function getQuestion() {
   try {
-    let link = `js/${USER_CHOICE.topic}/${USER_CHOICE.complexity}.json`;
+    let link = `js/${GEN_VAR.USER_CHOICE.topic}/${GEN_VAR.USER_CHOICE.complexity}.json`;
     let response = await fetch(link);
     const data = await response.json();
 
-    dataClone = JSON.parse(JSON.stringify(data));
+    GEN_VAR.dataClone = JSON.parse(JSON.stringify(data));
 
-    randomNumber = getRandomNumber(dataClone.length);
-    index = randomNumber - 1;
-    quantityOfQuestions = dataClone.length >= 10 ? 3 : dataClone.length;
+    GEN_VAR.randomNumber = getRandomNumber(GEN_VAR.dataClone.length);
+    GEN_VAR.index = GEN_VAR.randomNumber - 1;
+    GEN_VAR.quantityOfQuestions =
+      GEN_VAR.dataClone.length >= 10 ? 3 : GEN_VAR.dataClone.length;
 
-    insertingDataIntoHTMLTag(dataClone, index);
+    insertingDataIntoHTMLTag(GEN_VAR.dataClone, GEN_VAR.index);
     console.log("Success in loading data!");
   } catch (error) {
     console.log(error);
   }
 }
 
-answersOptionContainer.addEventListener("click", (event) => {
+DOM_VAR.answersOptionContainer.addEventListener("click", (event) => {
   if (event.target.classList.contains("option")) {
     let usersClick = Number(event.target.dataset.id);
-    let correctAnswer = Number(dataClone[index].correct);
+    let correctAnswer = Number(GEN_VAR.dataClone[GEN_VAR.index].correct);
 
     if (usersClick === correctAnswer) {
-      usersAnswersForquestions[questionNumber] = "correct";
+      GEN_VAR.usersAnswersForquestions[GEN_VAR.questionNumber] = "correct";
 
-      answersOptionsArray.forEach((element) => {
+      DOM_VAR.answersOptionsArray.forEach((element) => {
         element.classList.remove("correct-answer");
         element.classList.remove("wrong-answer");
         element.disabled = true;
@@ -338,8 +227,8 @@ answersOptionContainer.addEventListener("click", (event) => {
       event.target.classList.add("correct-answer");
       event.target.classList.remove("wrong-answer");
     } else {
-      usersAnswersForquestions[questionNumber] = "not correct";
-      answersOptionsArray.forEach((element) => {
+      GEN_VAR.usersAnswersForquestions[GEN_VAR.questionNumber] = "not correct";
+      DOM_VAR.answersOptionsArray.forEach((element) => {
         element.classList.remove("correct-answer");
         element.classList.remove("wrong-answer");
         element.disabled = true;
@@ -347,15 +236,15 @@ answersOptionContainer.addEventListener("click", (event) => {
       event.target.classList.add("wrong-answer");
       event.target.classList.remove("correct-answer");
     }
-    if (questionNumber < quantityOfQuestions - 1) {
+    if (GEN_VAR.questionNumber < GEN_VAR.quantityOfQuestions - 1) {
       setTimeout(() => {
         nextQuestion();
       }, 1000);
-    } else if (questionNumber === quantityOfQuestions - 1) {
+    } else if (GEN_VAR.questionNumber === GEN_VAR.quantityOfQuestions - 1) {
       let historyOfResultsFromLocalStorage =
         JSON.parse(localStorage.getItem("arrayOfResultsInLocalStorage")) ||
         historyOfResults;
-      for (i in historyOfResults) {
+      for (let i in historyOfResults) {
         console.log(i);
         if (historyOfResultsFromLocalStorage[`${i}`] !== null) {
           let topicLevel = document.querySelector(`.${i}`);
@@ -367,7 +256,7 @@ answersOptionContainer.addEventListener("click", (event) => {
       }
 
       let topicLevel = document.querySelector(
-        `.${USER_CHOICE.topic}-${USER_CHOICE.complexity}`,
+        `.${GEN_VAR.USER_CHOICE.topic}-${GEN_VAR.USER_CHOICE.complexity}`,
       );
       console.log(topicLevel);
 
@@ -376,32 +265,32 @@ answersOptionContainer.addEventListener("click", (event) => {
       let userScore = topicLevel.querySelector(".user-score");
       console.log(userScore);
 
-      let key = `${USER_CHOICE.topic}-${USER_CHOICE.complexity}`;
+      let key = `${GEN_VAR.USER_CHOICE.topic}-${GEN_VAR.USER_CHOICE.complexity}`;
       console.log(historyOfResultsFromLocalStorage[key]);
       if (historyOfResultsFromLocalStorage[key] === null) {
         console.log("it's null");
         historyOfResultsFromLocalStorage[key] = getResults(
-          usersAnswersForquestions,
+          GEN_VAR.usersAnswersForquestions,
         );
       } else {
         console.log("it's NOT null");
 
         if (
           historyOfResultsFromLocalStorage[key] >
-          getResults(usersAnswersForquestions)
+          getResults(GEN_VAR.usersAnswersForquestions)
         ) {
           historyOfResultsFromLocalStorage[key] =
             historyOfResultsFromLocalStorage[key];
         } else if (
           historyOfResultsFromLocalStorage[key] ===
-          getResults(usersAnswersForquestions)
+          getResults(GEN_VAR.usersAnswersForquestions)
         ) {
           historyOfResultsFromLocalStorage[key] = getResults(
-            usersAnswersForquestions,
+            GEN_VAR.usersAnswersForquestions,
           );
         } else {
           historyOfResultsFromLocalStorage[key] = getResults(
-            usersAnswersForquestions,
+            GEN_VAR.usersAnswersForquestions,
           );
         }
       }
@@ -429,29 +318,29 @@ answersOptionContainer.addEventListener("click", (event) => {
 
 // Result section script
 
-playAgainBtn.addEventListener("click", () => {
-  resultsSection.classList.add("hide");
-  chooseTopicSection.classList.remove("hide");
+DOM_VAR.playAgainBtn.addEventListener("click", () => {
+  DOM_VAR.resultsSection.classList.add("hide");
+  DOM_VAR.chooseTopicSection.classList.remove("hide");
 
-  usersAnswersForquestions.splice(0);
-  USER_CHOICE.topic = null;
-  USER_CHOICE.complexity = null;
+  GEN_VAR.usersAnswersForquestions.splice(0);
+  GEN_VAR.USER_CHOICE.topic = null;
+  GEN_VAR.USER_CHOICE.complexity = null;
 
-  topicBtns.forEach((element) => {
+  DOM_VAR.topicBtns.forEach((element) => {
     element.classList.remove("active-btn");
   });
-  complexityButtons.forEach((element) => {
+  DOM_VAR.complexityButtons.forEach((element) => {
     element.classList.remove("active-btn");
   });
-  goToTheComplexitySectionBtn.classList.add("hide");
-  startQuiz.classList.add("hide");
+  DOM_VAR.goToTheComplexitySectionBtn.classList.add("hide");
+  DOM_VAR.startQuiz.classList.add("hide");
 
-  answersOptionsArray.forEach((element) => {
+  DOM_VAR.answersOptionsArray.forEach((element) => {
     element.classList.remove("correct-answer");
     element.classList.remove("wrong-answer");
     element.disabled = false;
   });
-  questionNumber = 0;
+  GEN_VAR.questionNumber = 0;
 });
 
 const reluseBtn = document.querySelector(".reluse-btn");
