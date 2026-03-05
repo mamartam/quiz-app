@@ -1,0 +1,20 @@
+export const GEN_VAR = {
+  USER_CHOICE: {
+    topic: null,
+    complexity: null,
+    easyTimeLimit: 10,
+    mediumTimeLimit: 7,
+    hardTimeLimit: 2,
+  },
+  quizTopicsArray: ["front-end", "pop-culture", "random"],
+  quizComplexityArray: ["easy", "medium", "hard"],
+  usersAnswersForquestions: [],
+  questionNumber: 0,
+  dataClone: [],
+  index: 0,
+  randomNumber: 0,
+  quantityOfQuestions: null,
+  timer: null,
+  minutes: 0,
+  seconds: 59,
+};
