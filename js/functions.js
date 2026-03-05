@@ -39,7 +39,7 @@ export function insertingDataIntoHTMLTag(array, arrayElementIndex) {
   DOM_VAR.numberOfQuestion.textContent = GEN_VAR.questionNumber + 1;
   DOM_VAR.questionHeader.textContent = array[arrayElementIndex].question;
   DOM_VAR.answersOptionsArray.forEach((element, index) => {
-    element.textContent = array[arrayElementIndex].options[GEN_VAR.index];
+    element.textContent = array[arrayElementIndex].options[index];
   });
 }
 export function getResults(array) {
@@ -69,7 +69,6 @@ export function applyActiveClassToClickedButton(
 export function nextQuestion() {
   GEN_VAR.questionNumber++;
   GEN_VAR.dataClone.splice(GEN_VAR.index, 1);
-  console.log(GEN_VAR.dataClone.length);
   console.log(GEN_VAR.usersAnswersForquestions);
   GEN_VAR.randomNumber = getRandomNumber(GEN_VAR.dataClone.length);
   GEN_VAR.index = GEN_VAR.randomNumber - 1;
@@ -85,4 +84,100 @@ export function lastQuestion() {
   DOM_VAR.userPoints.textContent = getResults(GEN_VAR.usersAnswersForquestions);
   hideAndRemoveClassNames(DOM_VAR.quizSection, DOM_VAR.resultsSection);
   clearInterval(GEN_VAR.timer);
+}
+export function startTimer(selectedMinutes) {
+  if (GEN_VAR.timer) {
+    clearInterval(GEN_VAR.timer);
+  }
+
+  GEN_VAR.minutes = selectedMinutes;
+  GEN_VAR.seconds = 59;
+
+  updateCountDown();
+  GEN_VAR.timer = setInterval(updateCountDown, 1000);
+}
+export function updateCountDown() {
+  DOM_VAR.countDownClock.textContent = `${GEN_VAR.minutes < 10 ? "0" + GEN_VAR.minutes : GEN_VAR.minutes}:${GEN_VAR.seconds < 10 ? "0" + GEN_VAR.seconds : GEN_VAR.seconds}`;
+
+  if (GEN_VAR.minutes === 0 && GEN_VAR.seconds === 0) {
+    insertResultsIntoResultSection();
+    DOM_VAR.userPoints.textContent = getResults(
+      GEN_VAR.usersAnswersForquestions,
+    );
+    DOM_VAR.countDownClock.textContent = "Time is up!";
+    clearInterval(GEN_VAR.timer);
+    hideAndRemoveClassNames(DOM_VAR.quizSection, DOM_VAR.resultsSection);
+    return;
+  }
+
+  if (GEN_VAR.seconds === 0) {
+    GEN_VAR.seconds = 59;
+    GEN_VAR.minutes--;
+  } else {
+    GEN_VAR.seconds--;
+  }
+}
+
+export function insertResultsIntoResultSection() {
+  let historyOfResultsFromLocalStorage =
+    JSON.parse(localStorage.getItem("arrayOfResultsInLocalStorage")) ||
+    GEN_VAR.historyOfResults;
+  for (let i in GEN_VAR.historyOfResults) {
+    if (historyOfResultsFromLocalStorage[`${i}`] !== null) {
+      let topicLevel = document.querySelector(`.${i}`);
+      let userScore = topicLevel.querySelector(".user-score");
+      topicLevel.querySelector(".user-result").classList.remove("hide");
+      topicLevel.querySelector(".empty-result").classList.add("hide");
+      userScore.textContent = historyOfResultsFromLocalStorage[i];
+    }
+  }
+
+  let topicLevel = document.querySelector(
+    `.${GEN_VAR.USER_CHOICE.topic}-${GEN_VAR.USER_CHOICE.complexity}`,
+  );
+  console.log(topicLevel);
+
+  topicLevel.querySelector(".user-result").classList.remove("hide");
+  topicLevel.querySelector(".empty-result").classList.add("hide");
+  let userScore = topicLevel.querySelector(".user-score");
+  console.log(userScore);
+
+  let key = `${GEN_VAR.USER_CHOICE.topic}-${GEN_VAR.USER_CHOICE.complexity}`;
+  console.log(historyOfResultsFromLocalStorage[key]);
+  if (historyOfResultsFromLocalStorage[key] === null) {
+    console.log("it's null");
+    historyOfResultsFromLocalStorage[key] = getResults(
+      GEN_VAR.usersAnswersForquestions,
+    );
+  } else {
+    console.log("it's NOT null");
+
+    if (
+      historyOfResultsFromLocalStorage[key] >
+      getResults(GEN_VAR.usersAnswersForquestions)
+    ) {
+      historyOfResultsFromLocalStorage[key] =
+        historyOfResultsFromLocalStorage[key];
+    } else if (
+      historyOfResultsFromLocalStorage[key] ===
+      getResults(GEN_VAR.usersAnswersForquestions)
+    ) {
+      historyOfResultsFromLocalStorage[key] = getResults(
+        GEN_VAR.usersAnswersForquestions,
+      );
+    } else {
+      historyOfResultsFromLocalStorage[key] = getResults(
+        GEN_VAR.usersAnswersForquestions,
+      );
+    }
+  }
+
+  console.log(GEN_VAR.historyOfResults);
+  localStorage.setItem(
+    "arrayOfResultsInLocalStorage",
+    JSON.stringify(historyOfResultsFromLocalStorage),
+  );
+  let array = JSON.parse(localStorage.getItem("arrayOfResultsInLocalStorage"));
+  console.log(array);
+  userScore.textContent = array[key];
 }
