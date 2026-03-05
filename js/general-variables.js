@@ -17,4 +17,15 @@ export const GEN_VAR = {
   timer: null,
   minutes: 0,
   seconds: 59,
+  historyOfResults: {
+    "front-end-easy": null,
+    "front-end-medium": null,
+    "front-end-hard": null,
+    "pop-culture-easy": null,
+    "pop-culture-medium": null,
+    "pop-culture-hard": null,
+    "random-easy": null,
+    "random-medium": null,
+    "random-hard": null,
+  },
 };
