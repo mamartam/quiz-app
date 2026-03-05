@@ -13,9 +13,11 @@ import {
   startTimer,
   updateCountDown,
   insertResultsIntoResultSection,
+  creatinfResultsCards,
 } from "./functions.js";
 // END FUNCTIONS SECTION------------------------------------
 // Welcome page section script
+creatinfResultsCards();
 DOM_VAR.startBtn.addEventListener("click", () => {
   hideAndRemoveClassNames(
     DOM_VAR.welcomePageSection,
