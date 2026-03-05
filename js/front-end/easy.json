@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "category": "frontend",
+    "difficulty": "easy",
+    "question": "What does HTML stand for?",
+    "options": [
+      "Hyper Text Markup Language",
+      "High Tech Modern Language",
+      "Hyperlinks and Text Management",
+      "Home Tool Markup Language"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 2,
+    "category": "frontend",
+    "difficulty": "easy",
+    "question": "Which HTML tag is used to define an internal style sheet?",
+    "options": ["<css>", "<script>", "<style>", "<link>"],
+    "correct": 2
+  },
+  {
+    "id": 3,
+    "category": "frontend",
+    "difficulty": "easy",
+    "question": "Which HTML element is used for the largest heading?",
+    "options": ["<h6>", "<head>", "<h1>", "<header>"],
+    "correct": 2
+  },
+  {
+    "id": 4,
+    "category": "frontend",
+    "difficulty": "easy",
+    "question": "Which attribute is used to provide an alternative text for an image?",
+    "options": ["title", "src", "alt", "description"],
+    "correct": 2
+  },
+  {
+    "id": 5,
+    "category": "frontend",
+    "difficulty": "easy",
+    "question": "How do you create an unordered list in HTML?",
+    "options": ["<ol>", "<li>", "<ul>", "<list>"],
+    "correct": 2
+  },
+  {
+    "id": 6,
+    "category": "frontend",
+    "difficulty": "easy",
+    "question": "Where is the <title> tag usually located?",
+    "options": [
+      "Inside <body>",
+      "Inside <head>",
+      "After <html>",
+      "Inside <footer>"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 7,
+    "category": "frontend",
+    "difficulty": "easy",
+    "question": "What does CSS stand for?",
+    "options": [
+      "Creative Style Sheets",
+      "Colorful Style Sheets",
+      "Cascading Style Sheets",
+      "Computer Style Sheets"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 8,
+    "category": "frontend",
+    "difficulty": "easy",
+    "question": "Which CSS property is used to change the text color?",
+    "options": ["background-color", "text-style", "font-color", "color"],
+    "correct": 3
+  },
+  {
+    "id": 9,
+    "category": "frontend",
+    "difficulty": "easy",
+    "question": "Which CSS property makes text bold?",
+    "options": [
+      "font-weight: bold",
+      "text-transform: bold",
+      "font-style: bold",
+      "bold: true"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 10,
+    "category": "frontend",
+    "difficulty": "easy",
+    "question": "How do you select an element with id='header' in CSS?",
+    "options": [".header", "#header", "*header", "header{id}"],
+    "correct": 1
+  },
+  {
+    "id": 11,
+    "category": "frontend",
+    "difficulty": "easy",
+    "question": "Which property is used to add space INSIDE an element?",
+    "options": ["margin", "border", "padding", "spacing"],
+    "correct": 2
+  },
+  {
+    "id": 12,
+    "category": "frontend",
+    "difficulty": "easy",
+    "question": "How do you remove the underline from a hyperlink in CSS?",
+    "options": [
+      "text-decoration: none",
+      "underline: none",
+      "text-style: plain",
+      "decoration: no-underline"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 13,
+    "category": "frontend",
+    "difficulty": "easy",
+    "question": "Which display value creates a flexible container?",
+    "options": [
+      "display: block",
+      "display: grid",
+      "display: flex",
+      "display: inline"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 14,
+    "category": "frontend",
+    "difficulty": "easy",
+    "question": "How do you declare a JavaScript variable that cannot be reassigned?",
+    "options": ["let", "var", "const", "immutable"],
+    "correct": 2
+  },
+  {
+    "id": 15,
+    "category": "frontend",
+    "difficulty": "easy",
+    "question": "Which symbol is used for single-line comments in JavaScript?",
+    "options": ["''", "#", "//", "/* */"],
+    "correct": 2
+  },
+  {
+    "id": 16,
+    "category": "frontend",
+    "difficulty": "easy",
+    "question": "Which function is used to display a popup message in the browser?",
+    "options": ["console.log()", "print()", "alert()", "message()"],
+    "correct": 2
+  },
+  {
+    "id": 17,
+    "category": "frontend",
+    "difficulty": "easy",
+    "question": "How do you write 'Hello World' to the console?",
+    "options": [
+      "console.log('Hello World')",
+      "log.console('Hello World')",
+      "print('Hello World')",
+      "system.out.println('Hello World')"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 18,
+    "category": "frontend",
+    "difficulty": "easy",
+    "question": "Which operator checks for equality of both value and type?",
+    "options": ["=", "==", "===", "!="],
+    "correct": 2
+  },
+  {
+    "id": 19,
+    "category": "frontend",
+    "difficulty": "easy",
+    "question": "How do you create a function in JavaScript?",
+    "options": [
+      "function = myFunc()",
+      "function myFunc()",
+      "create myFunc()",
+      "func:myFunc()"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 20,
+    "category": "frontend",
+    "difficulty": "easy",
+    "question": "Which data type represents true or false values?",
+    "options": ["String", "Number", "Boolean", "Object"],
+    "correct": 2
+  }
+]

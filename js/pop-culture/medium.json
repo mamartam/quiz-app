@@ -1,0 +1,197 @@
+[
+  {
+    "id": 1,
+    "category": "pop-culture",
+    "difficulty": "medium",
+    "question": "Which actor played the Joker in the 2008 film 'The Dark Knight'?",
+    "options": [
+      "Joaquin Phoenix",
+      "Jack Nicholson",
+      "Heath Ledger",
+      "Jared Leto"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 2,
+    "category": "pop-culture",
+    "difficulty": "medium",
+    "question": "Which movie won the first-ever Academy Award for Best Animated Feature?",
+    "options": ["Toy Story", "Shrek", "Monsters, Inc.", "Spirited Away"],
+    "correct": 1
+  },
+  {
+    "id": 3,
+    "category": "pop-culture",
+    "difficulty": "medium",
+    "question": "What is the real name of the character 'Eleven' in 'Stranger Things'?",
+    "options": [
+      "Jane Hopper",
+      "Max Mayfield",
+      "Nancy Wheeler",
+      "Erica Sinclair"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 4,
+    "category": "pop-culture",
+    "difficulty": "medium",
+    "question": "Which band released the famous album 'The Dark Side of the Moon'?",
+    "options": ["The Beatles", "Led Zeppelin", "Pink Floyd", "Queen"],
+    "correct": 2
+  },
+  {
+    "id": 5,
+    "category": "pop-culture",
+    "difficulty": "medium",
+    "question": "In the sitcom 'Friends', how many times has Ross Geller been married?",
+    "options": ["1", "2", "3", "4"],
+    "correct": 2
+  },
+  {
+    "id": 6,
+    "category": "pop-culture",
+    "difficulty": "medium",
+    "question": "What is the name of the continent where 'Game of Thrones' primarily takes place?",
+    "options": ["Essos", "Westeros", "Tamriel", "Middle-earth"],
+    "correct": 1
+  },
+  {
+    "id": 7,
+    "category": "pop-culture",
+    "difficulty": "medium",
+    "question": "Which artist famously cut off part of his own ear?",
+    "options": [
+      "Salvador Dalí",
+      "Vincent van Gogh",
+      "Claude Monet",
+      "Andy Warhol"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 8,
+    "category": "pop-culture",
+    "difficulty": "medium",
+    "question": "What was the first music video ever played on MTV?",
+    "options": [
+      "Thriller",
+      "Take On Me",
+      "Video Killed the Radio Star",
+      "Billie Jean"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 9,
+    "category": "pop-culture",
+    "difficulty": "medium",
+    "question": "Who directed the 2010 film 'Inception'?",
+    "options": [
+      "Steven Spielberg",
+      "Quentin Tarantino",
+      "Christopher Nolan",
+      "Martin Scorsese"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 10,
+    "category": "pop-culture",
+    "difficulty": "medium",
+    "question": "Which video game series features the character Master Chief?",
+    "options": ["Call of Duty", "Halo", "Mass Effect", "Doom"],
+    "correct": 1
+  },
+  {
+    "id": 11,
+    "category": "pop-culture",
+    "difficulty": "medium",
+    "question": "In 'The Office' (US), what is the name of the company the characters work for?",
+    "options": ["Initech", "Dunder Mifflin", "Wernham Hogg", "Pied Piper"],
+    "correct": 1
+  },
+  {
+    "id": 12,
+    "category": "pop-culture",
+    "difficulty": "medium",
+    "question": "Which Greek god is the 'God of the Underworld'?",
+    "options": ["Zeus", "Poseidon", "Hades", "Hermes"],
+    "correct": 2
+  },
+  {
+    "id": 13,
+    "category": "pop-culture",
+    "difficulty": "medium",
+    "question": "What is the name of Han Solo's ship in 'Star Wars'?",
+    "options": ["The Enterprise", "Millennium Falcon", "Serenity", "Slave I"],
+    "correct": 1
+  },
+  {
+    "id": 14,
+    "category": "pop-culture",
+    "difficulty": "medium",
+    "question": "Who is the creator of the 'Star Wars' franchise?",
+    "options": [
+      "George Lucas",
+      "J.J. Abrams",
+      "Steven Spielberg",
+      "James Cameron"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 15,
+    "category": "pop-culture",
+    "difficulty": "medium",
+    "question": "In which city is the TV show 'Brooklyn Nine-Nine' set?",
+    "options": ["Chicago", "Los Angeles", "New York City", "Miami"],
+    "correct": 2
+  },
+  {
+    "id": 16,
+    "category": "pop-culture",
+    "difficulty": "medium",
+    "question": "Which singer's real name is Stefani Joanne Angelina Germanotta?",
+    "options": ["Madonna", "Lady Gaga", "Katy Perry", "Lana Del Rey"],
+    "correct": 1
+  },
+  {
+    "id": 17,
+    "category": "pop-culture",
+    "difficulty": "medium",
+    "question": "What is the highest-grossing film of all time (not adjusted for inflation)?",
+    "options": ["Avengers: Endgame", "Titanic", "Avatar", "The Lion King"],
+    "correct": 2
+  },
+  {
+    "id": 18,
+    "category": "pop-culture",
+    "difficulty": "medium",
+    "question": "What is the name of the island where the characters in 'Lost' crash?",
+    "options": ["The Island", "Skull Island", "Neverland", "Solomon Island"],
+    "correct": 0
+  },
+  {
+    "id": 19,
+    "category": "pop-culture",
+    "difficulty": "medium",
+    "question": "In 'The Hobbit', what is the name of the dragon?",
+    "options": ["Smaug", "Drogo", "Viserion", "Paarthurnax"],
+    "correct": 0
+  },
+  {
+    "id": 20,
+    "category": "pop-culture",
+    "difficulty": "medium",
+    "question": "Which fashion designer famously created the 'Little Black Dress'?",
+    "options": [
+      "Donatella Versace",
+      "Coco Chanel",
+      "Vera Wang",
+      "Vivienne Westwood"
+    ],
+    "correct": 1
+  }
+]

@@ -1,0 +1,232 @@
+[
+  {
+    "id": 1,
+    "category": "frontend",
+    "difficulty": "hard",
+    "question": "What is the correct order of the Event Loop phases in Node.js/Browser?",
+    "options": [
+      "Timers, I/O callbacks, Idle/Prepare, Poll, Check, Close callbacks",
+      "Poll, Timers, Check, Close callbacks",
+      "Check, Poll, Timers, I/O callbacks",
+      "Timers, Check, Poll, Close callbacks"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 2,
+    "category": "frontend",
+    "difficulty": "hard",
+    "question": "What will 'console.log(0.1 + 0.2 === 0.3)' output?",
+    "options": ["true", "false", "undefined", "NaN"],
+    "correct": 1
+  },
+  {
+    "id": 3,
+    "category": "frontend",
+    "difficulty": "hard",
+    "question": "Which CSS selector has the highest specificity?",
+    "options": [
+      "div.container:hover",
+      "#main-nav",
+      "div#main-nav",
+      "html body #main-nav"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 4,
+    "category": "frontend",
+    "difficulty": "hard",
+    "question": "What is a 'dead zone' (TDZ) in JavaScript?",
+    "options": [
+      "A region of the code where a variable is inaccessible until it is initialized",
+      "A function that never returns a value",
+      "A CSS area that cannot be clicked",
+      "The space between two HTML elements"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 5,
+    "category": "frontend",
+    "difficulty": "hard",
+    "question": "Which of the following is NOT a valid value for the 'justify-content' property in CSS Grid?",
+    "options": ["space-evenly", "stretch", "baseline", "around-nowhere"],
+    "correct": 3
+  },
+  {
+    "id": 6,
+    "category": "frontend",
+    "difficulty": "hard",
+    "question": "What is the difference between a 'Map' and a plain 'Object' in JS?",
+    "options": [
+      "Maps can have keys of any type, Objects only strings/symbols",
+      "Objects are faster than Maps for all operations",
+      "Maps do not support iteration",
+      "There is no functional difference"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 7,
+    "category": "frontend",
+    "difficulty": "hard",
+    "question": "What does the 'will-change' CSS property do?",
+    "options": [
+      "Automatically animates an element",
+      "Informs the browser of an element's expected change to optimize rendering",
+      "Forces an element to change its display type",
+      "Prevents any CSS changes from taking effect"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 8,
+    "category": "frontend",
+    "difficulty": "hard",
+    "question": "In JS, what is the result of 'typeof null'?",
+    "options": ["null", "undefined", "object", "boolean"],
+    "correct": 2
+  },
+  {
+    "id": 9,
+    "category": "frontend",
+    "difficulty": "hard",
+    "question": "What is the 'Shadow DOM'?",
+    "options": [
+      "A hidden copy of the DOM used for backups",
+      "A way to encapsulate CSS and HTML for Web Components",
+      "The DOM tree visible in dark mode",
+      "An old version of the Virtual DOM"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 10,
+    "category": "frontend",
+    "difficulty": "hard",
+    "question": "What is 'currying' in JavaScript?",
+    "options": [
+      "A way to speed up API requests",
+      "Translating a function from callable as f(a, b, c) into callable as f(a)(b)(c)",
+      "An alternative to the 'switch' statement",
+      "A method to deep clone objects"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 11,
+    "category": "frontend",
+    "difficulty": "hard",
+    "question": "What will 'console.log(1 < 2 < 3)' and 'console.log(3 > 2 > 1)' output?",
+    "options": ["true, true", "true, false", "false, false", "false, true"],
+    "correct": 1
+  },
+  {
+    "id": 12,
+    "category": "frontend",
+    "difficulty": "hard",
+    "question": "Which HTTP status code represents 'Permanent Redirect'?",
+    "options": ["301", "302", "307", "308"],
+    "correct": 0
+  },
+  {
+    "id": 13,
+    "category": "frontend",
+    "difficulty": "hard",
+    "question": "What is the purpose of 'Object.freeze()'?",
+    "options": [
+      "It makes an object constant and its properties cannot be changed or added",
+      "It pauses any animations on the object",
+      "It prevents the object from being deleted",
+      "It compresses the object in memory"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 14,
+    "category": "frontend",
+    "difficulty": "hard",
+    "question": "What does the ':where()' CSS pseudo-class do differently from ':is()'?",
+    "options": [
+      ":where() has 0 specificity, :is() takes the specificity of its strongest selector",
+      ":where() only works for IDs",
+      ":is() is only for Firefox",
+      "There is no difference"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 15,
+    "category": "frontend",
+    "difficulty": "hard",
+    "question": "In the context of 'this' keyword, what does '.bind()' do?",
+    "options": [
+      "Immediately calls the function",
+      "Creates a new function with a fixed 'this' context",
+      "Binds two different functions together",
+      "Deletes the 'this' context"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 16,
+    "category": "frontend",
+    "difficulty": "hard",
+    "question": "What is 'Debouncing' in JavaScript?",
+    "options": [
+      "Ensuring a function is called every millisecond",
+      "Grouping multiple sequential calls into a single call after a delay",
+      "Removing all bugs from a script",
+      "A way to convert strings to numbers"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 17,
+    "category": "frontend",
+    "difficulty": "hard",
+    "question": "What is the primary difference between 'visibility: hidden' and 'display: none'?",
+    "options": [
+      "There is no difference",
+      "'visibility: hidden' takes up space in the layout, 'display: none' does not",
+      "'display: none' only works for images",
+      "'visibility: hidden' removes the element from the DOM"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 18,
+    "category": "frontend",
+    "difficulty": "hard",
+    "question": "What is a 'WeakMap' in JavaScript?",
+    "options": [
+      "A Map that has fewer methods",
+      "A Map where keys must be objects and are weakly held (garbage collected)",
+      "A Map that only allows 5 entries",
+      "A Map that works only in older browsers"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 19,
+    "category": "frontend",
+    "difficulty": "hard",
+    "question": "Which property allows you to change the stacking context in CSS without using z-index?",
+    "options": ["opacity", "color", "font-weight", "margin"],
+    "correct": 0
+  },
+  {
+    "id": 20,
+    "category": "frontend",
+    "difficulty": "hard",
+    "question": "What does the 'integrity' attribute do in a <script> tag?",
+    "options": [
+      "Checks if the script is written in valid JS",
+      "Allows the browser to verify that the fetched script has not been manipulated (Subresource Integrity)",
+      "Makes the script run with administrator privileges",
+      "Compresses the script during download"
+    ],
+    "correct": 1
+  }
+]

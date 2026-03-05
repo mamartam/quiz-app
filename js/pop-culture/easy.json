@@ -1,0 +1,172 @@
+[
+  {
+    "id": 1,
+    "category": "pop-culture",
+    "difficulty": "easy",
+    "question": "Which superhero is also known as the 'Man of Steel'?",
+    "options": ["Batman", "Superman", "Iron Man", "Spider-Man"],
+    "correct": 1
+  },
+  {
+    "id": 2,
+    "category": "pop-culture",
+    "difficulty": "easy",
+    "question": "In 'Harry Potter', what is the name of the school for wizards?",
+    "options": ["Waverly Place", "Narnia", "Hogwarts", "Middle-earth"],
+    "correct": 2
+  },
+  {
+    "id": 3,
+    "category": "pop-culture",
+    "difficulty": "easy",
+    "question": "Who is known as the 'King of Pop'?",
+    "options": ["Elvis Presley", "Michael Jackson", "Prince", "Justin Bieber"],
+    "correct": 1
+  },
+  {
+    "id": 4,
+    "category": "pop-culture",
+    "difficulty": "easy",
+    "question": "Which character in 'Star Wars' is a small, green Jedi Master?",
+    "options": ["Han Solo", "Darth Vader", "Yoda", "Chewbacca"],
+    "correct": 2
+  },
+  {
+    "id": 5,
+    "category": "pop-culture",
+    "difficulty": "easy",
+    "question": "How many Infinity Stones are there in the Marvel Cinematic Universe?",
+    "options": ["4", "5", "6", "7"],
+    "correct": 2
+  },
+  {
+    "id": 6,
+    "category": "pop-culture",
+    "difficulty": "easy",
+    "question": "Which singer is known for the hit song 'Shake It Off'?",
+    "options": ["Ariana Grande", "Katy Perry", "Taylor Swift", "Lady Gaga"],
+    "correct": 2
+  },
+  {
+    "id": 7,
+    "category": "pop-culture",
+    "difficulty": "easy",
+    "question": "In the movie 'Titanic', what is the name of the male lead character played by Leonardo DiCaprio?",
+    "options": ["Jack", "Romeo", "Gatsby", "Rose"],
+    "correct": 0
+  },
+  {
+    "id": 8,
+    "category": "pop-culture",
+    "difficulty": "easy",
+    "question": "Which company created the iPhone?",
+    "options": ["Samsung", "Google", "Apple", "Microsoft"],
+    "correct": 2
+  },
+  {
+    "id": 9,
+    "category": "pop-culture",
+    "difficulty": "easy",
+    "question": "What is the name of the fictional city where Batman lives?",
+    "options": ["Metropolis", "Central City", "Gotham City", "Star City"],
+    "correct": 2
+  },
+  {
+    "id": 10,
+    "category": "pop-culture",
+    "difficulty": "easy",
+    "question": "Which social media platform is famous for its 280-character limit (originally 140)?",
+    "options": ["Facebook", "Instagram", "X (Twitter)", "TikTok"],
+    "correct": 2
+  },
+  {
+    "id": 11,
+    "category": "pop-culture",
+    "difficulty": "easy",
+    "question": "What is the name of the snowman in the movie 'Frozen'?",
+    "options": ["Sven", "Kristoff", "Olaf", "Hans"],
+    "correct": 2
+  },
+  {
+    "id": 12,
+    "category": "pop-culture",
+    "difficulty": "easy",
+    "question": "In 'The Matrix', what color is the pill Neo takes to wake up to the real world?",
+    "options": ["Blue", "Red", "Green", "Yellow"],
+    "correct": 1
+  },
+  {
+    "id": 13,
+    "category": "pop-culture",
+    "difficulty": "easy",
+    "question": "Which video game features a plumber named Mario?",
+    "options": [
+      "Sonic the Hedgehog",
+      "Super Mario Bros.",
+      "The Legend of Zelda",
+      "Minecraft"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 14,
+    "category": "pop-culture",
+    "difficulty": "easy",
+    "question": "What is the largest movie industry in the world, based in India?",
+    "options": ["Hollywood", "Nollywood", "Bollywood", "Tollywood"],
+    "correct": 2
+  },
+  {
+    "id": 15,
+    "category": "pop-culture",
+    "difficulty": "easy",
+    "question": "Who is the 'God of Mischief' in Marvel Comics?",
+    "options": ["Thor", "Loki", "Odin", "Heimdall"],
+    "correct": 1
+  },
+  {
+    "id": 16,
+    "category": "pop-culture",
+    "difficulty": "easy",
+    "question": "Which TV series features 'The Upside Down'?",
+    "options": ["Wednesday", "Stranger Things", "Dark", "The Witcher"],
+    "correct": 1
+  },
+  {
+    "id": 17,
+    "category": "pop-culture",
+    "difficulty": "easy",
+    "question": "What is the name of the world's most famous doll?",
+    "options": ["Bratz", "Barbie", "Polly Pocket", "L.O.L. Surprise"],
+    "correct": 1
+  },
+  {
+    "id": 18,
+    "category": "pop-culture",
+    "difficulty": "easy",
+    "question": "In 'The Lion King', who is Simba's father?",
+    "options": ["Scar", "Mufasa", "Pumbaa", "Timon"],
+    "correct": 1
+  },
+  {
+    "id": 19,
+    "category": "pop-culture",
+    "difficulty": "easy",
+    "question": "Which streaming service produced 'The Crown' and 'Squid Game'?",
+    "options": ["Disney+", "Hulu", "Netflix", "Amazon Prime"],
+    "correct": 2
+  },
+  {
+    "id": 20,
+    "category": "pop-culture",
+    "difficulty": "easy",
+    "question": "Which artist is famous for the 'Mona Lisa'?",
+    "options": [
+      "Pablo Picasso",
+      "Vincent van Gogh",
+      "Leonardo da Vinci",
+      "Claude Monet"
+    ],
+    "correct": 2
+  }
+]

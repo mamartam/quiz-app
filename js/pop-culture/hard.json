@@ -1,0 +1,207 @@
+[
+  {
+    "id": 1,
+    "category": "pop-culture",
+    "difficulty": "hard",
+    "question": "Which was the first feature-length animated movie ever released?",
+    "options": [
+      "Snow White and the Seven Dwarfs",
+      "Pinocchio",
+      "El Apóstol",
+      "Steamboat Willie"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 2,
+    "category": "pop-culture",
+    "difficulty": "hard",
+    "question": "In 'Pulp Fiction', what is the name of the character played by Quentin Tarantino?",
+    "options": ["Lance", "Jimmie Dimmick", "The Wolf", "Marvin"],
+    "correct": 1
+  },
+  {
+    "id": 3,
+    "category": "pop-culture",
+    "difficulty": "hard",
+    "question": "What was the original working title for the movie 'Star Wars: Return of the Jedi'?",
+    "options": [
+      "The New Hope",
+      "Blue Harvest",
+      "Shadow of the Empire",
+      "The Last Jedi"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 4,
+    "category": "pop-culture",
+    "difficulty": "hard",
+    "question": "Which singer was the lead vocalist for the band 'The Police'?",
+    "options": ["Sting", "Bono", "Phil Collins", "Mick Jagger"],
+    "correct": 0
+  },
+  {
+    "id": 5,
+    "category": "pop-culture",
+    "difficulty": "hard",
+    "question": "How many times does the number '42' appear in 'The Hitchhiker's Guide to the Galaxy' as the answer to everything?",
+    "options": ["Once", "Twice", "Every chapter", "Seven times"],
+    "correct": 0
+  },
+  {
+    "id": 6,
+    "category": "pop-culture",
+    "difficulty": "hard",
+    "question": "Which movie was the first to be rated PG-13 in the United States?",
+    "options": [
+      "Jaws",
+      "Red Dawn",
+      "Indiana Jones and the Temple of Doom",
+      "Gremlins"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 7,
+    "category": "pop-culture",
+    "difficulty": "hard",
+    "question": "In the 'Lord of the Rings' books, who was the first person to find the One Ring after it was lost by Isildur?",
+    "options": ["Gollum", "Bilbo Baggins", "Déagol", "Gandalf"],
+    "correct": 2
+  },
+  {
+    "id": 8,
+    "category": "pop-culture",
+    "difficulty": "hard",
+    "question": "What is the name of the fictional kingdom where 'The Legend of Zelda' takes place?",
+    "options": ["Limgrave", "Hyrule", "Azeroth", "Skyrim"],
+    "correct": 1
+  },
+  {
+    "id": 9,
+    "category": "pop-culture",
+    "difficulty": "hard",
+    "question": "Which legendary director made his debut with the movie 'Duel' in 1971?",
+    "options": [
+      "Martin Scorsese",
+      "Steven Spielberg",
+      "Francis Ford Coppola",
+      "George Lucas"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 10,
+    "category": "pop-culture",
+    "difficulty": "hard",
+    "question": "What is the name of the AI in the movie '2001: A Space Odyssey'?",
+    "options": ["HAL 9000", "GLaDOS", "TARS", "JARVIS"],
+    "correct": 0
+  },
+  {
+    "id": 11,
+    "category": "pop-culture",
+    "difficulty": "hard",
+    "question": "Which actor refused his Oscar for 'The Godfather' to protest Hollywood's portrayal of Native Americans?",
+    "options": ["Al Pacino", "Marlon Brando", "Robert De Niro", "James Caan"],
+    "correct": 1
+  },
+  {
+    "id": 12,
+    "category": "pop-culture",
+    "difficulty": "hard",
+    "question": "In 'The Big Bang Theory', what is the name of the theme song's band?",
+    "options": [
+      "The Rembrandts",
+      "Barenaked Ladies",
+      "They Might Be Giants",
+      "The Fray"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 13,
+    "category": "pop-culture",
+    "difficulty": "hard",
+    "question": "What was the first music video ever shown on MTV Europe?",
+    "options": [
+      "Money for Nothing",
+      "Video Killed the Radio Star",
+      "Take On Me",
+      "In the Air Tonight"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 14,
+    "category": "pop-culture",
+    "difficulty": "hard",
+    "question": "Which philosopher's ideas inspired the core concepts of 'The Matrix'?",
+    "options": [
+      "Jean Baudrillard",
+      "Friedrich Nietzsche",
+      "Immanuel Kant",
+      "Albert Camus"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 15,
+    "category": "pop-culture",
+    "difficulty": "hard",
+    "question": "What is the name of the jazz club where Sebastian and Mia meet in 'La La Land'?",
+    "options": ["The Blue Note", "Seb’s", "The Lighthouse Café", "Birdland"],
+    "correct": 2
+  },
+  {
+    "id": 16,
+    "category": "pop-culture",
+    "difficulty": "hard",
+    "question": "Which character in 'The Simpsons' has a middle name of 'J'?",
+    "options": ["Bart", "Homer", "Abe", "All of the above"],
+    "correct": 3
+  },
+  {
+    "id": 17,
+    "category": "pop-culture",
+    "difficulty": "hard",
+    "question": "What is the name of the planet where the xenomorph was first discovered in 'Alien'?",
+    "options": ["LV-426", "Pandora", "Tatooine", "Solaris"],
+    "correct": 0
+  },
+  {
+    "id": 18,
+    "category": "pop-culture",
+    "difficulty": "hard",
+    "question": "In 'Breaking Bad', what was Gus Fring's fast-food chain called?",
+    "options": [
+      "Pollos Hermanos",
+      "Los Pollos Hermanos",
+      "El Pollo Loco",
+      "Chicken Brothers"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 19,
+    "category": "pop-culture",
+    "difficulty": "hard",
+    "question": "Who was the first female artist to be inducted into the Rock and Roll Hall of Fame?",
+    "options": ["Madonna", "Aretha Franklin", "Tina Turner", "Stevie Nicks"],
+    "correct": 1
+  },
+  {
+    "id": 20,
+    "category": "pop-culture",
+    "difficulty": "hard",
+    "question": "Which movie features the line: 'I'll have what she's having'?",
+    "options": [
+      "Pretty Woman",
+      "When Harry Met Sally",
+      "Sleepless in Seattle",
+      "The Graduate"
+    ],
+    "correct": 1
+  }
+]

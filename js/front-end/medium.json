@@ -1,0 +1,217 @@
+[
+  {
+    "id": 1,
+    "category": "frontend",
+    "difficulty": "medium",
+    "question": "Which of the following is a correct way to create a closure in JavaScript?",
+    "options": [
+      "A function defined inside another function that accesses the outer function's variables",
+      "A variable that is declared globally",
+      "A function that returns a fixed value",
+      "A way to close a browser window using script"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 2,
+    "category": "frontend",
+    "difficulty": "medium",
+    "question": "What is the result of 'console.log(typeof [])' in JavaScript?",
+    "options": ["array", "object", "null", "undefined"],
+    "correct": 1
+  },
+  {
+    "id": 3,
+    "category": "frontend",
+    "difficulty": "medium",
+    "question": "Which CSS property is used to control the space between flex items along the main axis?",
+    "options": [
+      "align-items",
+      "justify-content",
+      "flex-direction",
+      "display-spacing"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 4,
+    "category": "frontend",
+    "difficulty": "medium",
+    "question": "In the CSS Box Model, which property is outside the border?",
+    "options": ["Padding", "Content", "Margin", "Outline"],
+    "correct": 2
+  },
+  {
+    "id": 5,
+    "category": "frontend",
+    "difficulty": "medium",
+    "question": "Which HTML5 element is used to specify independent, self-contained content, like a blog post?",
+    "options": ["<section>", "<article>", "<aside>", "<div>"],
+    "correct": 1
+  },
+  {
+    "id": 6,
+    "category": "frontend",
+    "difficulty": "medium",
+    "question": "What is the purpose of the 'async' attribute in a <script> tag?",
+    "options": [
+      "It stops the HTML parsing until the script is executed",
+      "It executes the script only after the DOM is fully loaded",
+      "It allows the script to be downloaded in the background and executed as soon as it is available",
+      "It makes the script run faster by compressing it"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 7,
+    "category": "frontend",
+    "difficulty": "medium",
+    "question": "What will '5' + 2 result in JavaScript?",
+    "options": ["7", "52", "NaN", "Error"],
+    "correct": 1
+  },
+  {
+    "id": 8,
+    "category": "frontend",
+    "difficulty": "medium",
+    "question": "Which JavaScript array method creates a new array with all elements that pass a specific test?",
+    "options": ["map()", "forEach()", "filter()", "reduce()"],
+    "correct": 2
+  },
+  {
+    "id": 9,
+    "category": "frontend",
+    "difficulty": "medium",
+    "question": "What does the 'z-index' property in CSS do?",
+    "options": [
+      "Sets the zoom level of an element",
+      "Specifies the stack order of an element",
+      "Changes the size of the element on the Z-axis",
+      "Rotates an element in 3D space"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 10,
+    "category": "frontend",
+    "difficulty": "medium",
+    "question": "Which of these is a 'falsy' value in JavaScript?",
+    "options": ["'0'", "[]", "NaN", "{}"],
+    "correct": 2
+  },
+  {
+    "id": 11,
+    "category": "frontend",
+    "difficulty": "medium",
+    "question": "What is the difference between '==' and '===' in JavaScript?",
+    "options": [
+      "There is no difference",
+      "'==' checks value only, '===' checks both value and type",
+      "'===' is only used for strings",
+      "'==' is faster than '==='"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 12,
+    "category": "frontend",
+    "difficulty": "medium",
+    "question": "How can you repeat a background image using CSS?",
+    "options": [
+      "background-repeat: repeat",
+      "image-repeat: true",
+      "background-mode: infinite",
+      "repeat: background"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 13,
+    "category": "frontend",
+    "difficulty": "medium",
+    "question": "What is the correct syntax for a JavaScript Promise?",
+    "options": [
+      "new Promise((resolve, reject) => { ... })",
+      "Promise.create((res, rej) => { ... })",
+      "make Promise((resolve) => { ... })",
+      "new async Promise({ ... })"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 14,
+    "category": "frontend",
+    "difficulty": "medium",
+    "question": "Which CSS unit is relative to the font-size of the root element (html)?",
+    "options": ["em", "rem", "px", "vh"],
+    "correct": 1
+  },
+  {
+    "id": 15,
+    "category": "frontend",
+    "difficulty": "medium",
+    "question": "In JavaScript, what is 'hoisting'?",
+    "options": [
+      "Moving an element to the top of the DOM",
+      "The behavior of moving declarations to the top of their scope",
+      "A way to increase performance of loops",
+      "An error caused by calling a function too many times"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 16,
+    "category": "frontend",
+    "difficulty": "medium",
+    "question": "What does 'pointer-events: none' do in CSS?",
+    "options": [
+      "Changes the cursor to a pointer",
+      "Makes an element invisible to mouse clicks/interactions",
+      "Disables the mouse pointer on the whole page",
+      "Ensures the pointer stays inside the element"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 17,
+    "category": "frontend",
+    "difficulty": "medium",
+    "question": "Which method is used to convert a JSON string into a JavaScript object?",
+    "options": [
+      "JSON.stringify()",
+      "JSON.toObject()",
+      "JSON.parse()",
+      "JSON.convert()"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 18,
+    "category": "frontend",
+    "difficulty": "medium",
+    "question": "What is the default value of the 'position' property in CSS?",
+    "options": ["relative", "absolute", "static", "fixed"],
+    "correct": 2
+  },
+  {
+    "id": 19,
+    "category": "frontend",
+    "difficulty": "medium",
+    "question": "Which event occurs when the user clicks on an HTML element?",
+    "options": ["onmouseover", "onchange", "onclick", "onmouseclick"],
+    "correct": 2
+  },
+  {
+    "id": 20,
+    "category": "frontend",
+    "difficulty": "medium",
+    "question": "What does 'localStorage' do?",
+    "options": [
+      "Stores data only for the duration of the page session",
+      "Stores data with no expiration date in the browser",
+      "Stores data on the server",
+      "Clears all cookies"
+    ],
+    "correct": 1
+  }
+]
