@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./assets/images/tab-favicon.svg"
+    />
+    <title>Quiz</title>
+  </head>
+  <body>
+    <main>
+      <!-- Welcome page section -->
+      <section class="welcome-page-section">
+        <img
+          class="welcome-illustration"
+          src="./assets/images/Illustration.svg"
+          alt="Illustration"
+        />
+        <h1 class="welcome-header">Welcome to the Quiz!</h1>
+        <button type="button" class="start-btn">Start the Quiz</button>
+      </section>
+      <!-- Choose topic section -->
+      <section class="choose-topic-section hide">
+        <div class="rules-container">
+          <button class="reluse-btn btn" type="button">Rules</button>
+        </div>
+        <div class="ruels-description hide">
+          <h3>1. Choose Your Challenge:</h3>
+          <p>
+            Pick a topic and select your difficulty level. The difficulty
+            determines your total time limit for the entire quiz:
+          </p>
+          <ul>
+            <li>
+              <img src="./assets/images/circle-green.svg" alt="" />
+              <span><b>Easy: </b>10 minutes — for a relaxed experience.</span>
+            </li>
+            <li>
+              <img src="./assets/images/circle-yellow.svg" alt="" />
+              <span
+                ><b>Medium: </b>7 minutes — for those who feel confident.</span
+              >
+            </li>
+            <li>
+              <img src="./assets/images/circle-red.svg" alt="" />
+              <span
+                ><b>Hard: </b>5 minutes — a true test of speed and
+                knowledge!</span
+              >
+            </li>
+          </ul>
+          <h3>2. One Tap – One Answer:</h3>
+          <p>
+            Be careful! As soon as you click an answer option, it is recorded
+            automatically. You <b>cannot change your choice</b> or go back to
+            the previous question. You will be immediately redirected to the
+            next question.
+          </p>
+          <h3>3. The Clock is Ticking:</h3>
+          <p>
+            The timer starts the moment you press the "Start" button and counts
+            down for <b>all 10 questions combined</b>.
+          </p>
+          <ul>
+            <li>
+              <img src="./assets/images/exclamation-mark.svg" alt="" />Keep an
+              eye on the countdown in the corner of your screen.
+            </li>
+            <li>
+              <img src="./assets/images/exclamation-mark.svg" alt="" />
+              If time runs out before you finish — the game will end
+              automatically, and your current progress will be saved.
+            </li>
+          </ul>
+          <h3>4. Your Score:</h3>
+          <p>
+            Your goal is to provide as many correct answers as possible within
+            the time limit. Your final score will reveal how well you know the
+            chosen topic!
+          </p>
+          <div class="rules-close-btn-container">
+            <button type="button" class="close-rules-btn btn">Close</button>
+          </div>
+        </div>
+        <h2 class="topic-header">Choose the topic</h2>
+        <div class="topics-container">
+          <button type="button" class="front-end-topic-btn front-end topic-btn">
+            Front-End
+          </button>
+          <button
+            type="button"
+            class="pop-culture-topic-btn pop-culture topic-btn"
+          >
+            Pop-culture
+          </button>
+          <button type="button" class="random-topic-btn random topic-btn">
+            Random
+          </button>
+        </div>
+        <div class="navigation-btns">
+          <button type="button" class="go-to-the-complexity-section-btn hide">
+            Next
+          </button>
+        </div>
+      </section>
+      <!-- Choose complexity section -->
+      <section class="complexity-section hide">
+        <h2 class="complexity-header">Complexity</h2>
+        <div class="complexity-btns-container">
+          <button type="button" class="easy-level-btn easy complexity-btn">
+            Easy
+          </button>
+          <button type="button" class="medium-level-btn medium complexity-btn">
+            Medium
+          </button>
+          <button type="button" class="hard-level-btn hard complexity-btn">
+            Hard
+          </button>
+        </div>
+        <div class="navigation-btns">
+          <button type="button" class="back-to-the-topics-btn">Back</button>
+          <button type="button" class="start-quiz hide">Start</button>
+        </div>
+      </section>
+      <!-- Quiz section -->
+      <section class="quiz-section hide">
+        <div class="quiz-info">
+          <p>Topic: <span class="quiz-info-topic">Front-end</span></p>
+          <p>Complexity: <span class="quiz-info-level">Hard</span></p>
+        </div>
+        <h2 class="quiz-section-header">
+          Question <span class="number-of-question">1</span>
+        </h2>
+        <div>
+          <div class="clock-container">
+            <p class="count-down-clock">00:00</p>
+          </div>
+          <h3 class="question-container">
+            <span class="question-header">Question</span>
+          </h3>
+          <div class="answers-option-container answer-option-box">
+            <button type="button" class="first-answer option" data-id="0">
+              A
+            </button>
+            <button type="button" class="second-answer option" data-id="1">
+              B
+            </button>
+            <button type="button" class="third-answer option" data-id="2">
+              C
+            </button>
+            <button type="button" class="fourth-answer option" data-id="3">
+              D
+            </button>
+          </div>
+        </div>
+        <!-- <div class="navigation-btns">
+          <button type="button" class="next-question-btn hide">Next</button>
+          <button type="button" class="finish-btn hide">Finish</button>
+        </div> -->
+      </section>
+      <!-- Result section -->
+      <section class="results-section hide">
+        <div class="result-info">
+          <h2>Results</h2>
+          <p><span class="user-points"></span>/10</p>
+        </div>
+        <h3>My Achievements</h3>
+        <div class="history-section">
+          <div class="card front-end-result front-end-easy">
+            <h4>
+              Fron-end
+              <img src="./assets/images/web.svg" alt="" />
+            </h4>
+            <p>Easy Level</p>
+            <p class="user-result hide"><span class="user-score"></span>/10</p>
+            <div class="empty-result">
+              <img
+                src="./assets/images/detective-incognito-robber-spy-thief-svgrepo-com.svg"
+                alt=""
+              />
+              <p>No achievements yet...</p>
+            </div>
+          </div>
+          <div class="card front-end-result front-end-medium">
+            <h4>
+              Fron-end
+              <img src="./assets/images/web.svg" alt="" />
+            </h4>
+            <p>Medium Level</p>
+            <p class="user-result hide"><span class="user-score"></span>/10</p>
+            <div class="empty-result">
+              <img
+                src="./assets/images/detective-incognito-robber-spy-thief-svgrepo-com.svg"
+                alt=""
+              />
+              <p>No achievements yet...</p>
+            </div>
+          </div>
+          <div class="card front-end-result front-end-hard">
+            <h4>
+              Fron-end
+              <img src="./assets/images/web.svg" alt="" />
+            </h4>
+            <p>Hard Level</p>
+            <p class="user-result hide"><span class="user-score"></span>/10</p>
+            <div class="empty-result">
+              <img
+                src="./assets/images/detective-incognito-robber-spy-thief-svgrepo-com.svg"
+                alt=""
+              />
+              <p>No achievements yet...</p>
+            </div>
+          </div>
+          <div class="card pop-culture-result pop-culture-easy">
+            <h4>
+              Pop-culture <img src="./assets/images/glowing-star.svg" alt="" />
+            </h4>
+            <p>Easy Level</p>
+            <p class="user-result hide"><span class="user-score"></span>/10</p>
+            <div class="empty-result">
+              <img
+                src="./assets/images/detective-incognito-robber-spy-thief-svgrepo-com.svg"
+                alt=""
+              />
+              <p>No achievements yet...</p>
+            </div>
+          </div>
+          <div class="card pop-culture-result pop-culture-medium">
+            <h4>
+              Pop-culture <img src="./assets/images/glowing-star.svg" alt="" />
+            </h4>
+            <p>Medium Level</p>
+            <p class="user-result hide"><span class="user-score"></span>/10</p>
+            <div class="empty-result">
+              <img
+                src="./assets/images/detective-incognito-robber-spy-thief-svgrepo-com.svg"
+                alt=""
+              />
+              <p>No achievements yet...</p>
+            </div>
+          </div>
+          <div class="card pop-culture-result pop-culture-hard">
+            <h4>
+              Pop-culture <img src="./assets/images/glowing-star.svg" alt="" />
+            </h4>
+            <p>Hard Level</p>
+            <p class="user-result hide"><span class="user-score"></span>/10</p>
+            <div class="empty-result">
+              <img
+                src="./assets/images/detective-incognito-robber-spy-thief-svgrepo-com.svg"
+                alt=""
+              />
+              <p>No achievements yet...</p>
+            </div>
+          </div>
+          <div class="card random-result random-easy">
+            <h4>Random <img src="./assets/images/game-die.svg" alt="" /></h4>
+            <p>Easy Level</p>
+            <p class="user-result hide"><span class="user-score"></span>/10</p>
+            <div class="empty-result">
+              <img
+                src="./assets/images/detective-incognito-robber-spy-thief-svgrepo-com.svg"
+                alt=""
+              />
+              <p>No achievements yet...</p>
+            </div>
+          </div>
+          <div class="card random-result random-medium">
+            <h4>Random <img src="./assets/images/game-die.svg" alt="" /></h4>
+            <p>Medium Level</p>
+            <p class="user-result hide"><span class="user-score"></span>/10</p>
+            <div class="empty-result">
+              <img
+                src="./assets/images/detective-incognito-robber-spy-thief-svgrepo-com.svg"
+                alt=""
+              />
+              <p>No achievements yet...</p>
+            </div>
+          </div>
+          <div class="card random-result random-hard">
+            <h4>Random <img src="./assets/images/game-die.svg" alt="" /></h4>
+            <p>Hard Level</p>
+            <p class="user-result hide"><span class="user-score"></span>/10</p>
+            <div class="empty-result">
+              <img
+                src="./assets/images/detective-incognito-robber-spy-thief-svgrepo-com.svg"
+                alt=""
+              />
+              <p>No achievements yet...</p>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="play-again btn">Play Again</button>
+      </section>
+    </main>
+    <script defer src="js/main.js"></script>
+  </body>
+</html>
