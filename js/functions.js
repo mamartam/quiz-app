@@ -181,3 +181,27 @@ export function insertResultsIntoResultSection() {
   console.log(array);
   userScore.textContent = array[key];
 }
+export function creatinfResultsCards() {
+  const historySection = document.querySelector(".history-section");
+  historySection.innerHTML = "";
+  const howMuchLevels = GEN_VAR.quizComplexityArray.length;
+  const howMushTopics = GEN_VAR.quizTopicsArray.length;
+  for (let i = 0; i < howMushTopics; i++) {
+    for (let j = 0; j < howMuchLevels; j++) {
+      console.log(
+        `${GEN_VAR.quizTopicsArray[i]}-${GEN_VAR.quizComplexityArray[j]}`,
+      );
+      historySection.innerHTML += `<div class="card ${GEN_VAR.quizTopicsArray[i]}-${GEN_VAR.quizComplexityArray[j]}">
+            <h4>${GEN_VAR.quizTopicsArray[i]} <img src="./assets/images/${GEN_VAR.quizTopicsArray[i]}-icon.svg" alt="" /></h4>
+            <p>${GEN_VAR.quizComplexityArray[j]} Level</p>
+            <p class="user-result hide"><span class="user-score"></span>/10</p>
+            <div class="empty-result">
+              <img
+                src="./assets/images/detective-incognito-robber-spy-thief-svgrepo-com.svg"
+                alt=""
+              />
+              <p>No achievements yet...</p>
+            </div>`;
+    }
+  }
+}
