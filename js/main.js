@@ -1,7 +1,5 @@
-// CONNECTION WITH DOM
-import { DOM_VAR } from "./dom-variables.js";
-// GENERAL VARIABLES AND STARTING VALUES
-import { GEN_VAR } from "./general-variables.js";
+import { DOM_VAR } from "./dom-variables.js"; // CONNECTION WITH DOM
+import { GEN_VAR } from "./general-variables.js"; // GENERAL VARIABLES AND STARTING VALUES
 // START FUNCTIONS SECTION----------------------------------
 import {
   hideAndRemoveClassNames,
@@ -12,9 +10,11 @@ import {
   applyActiveClassToClickedButton,
   nextQuestion,
   lastQuestion,
+  startTimer,
+  updateCountDown,
+  insertResultsIntoResultSection,
 } from "./functions.js";
 // END FUNCTIONS SECTION------------------------------------
-
 // Welcome page section script
 DOM_VAR.startBtn.addEventListener("click", () => {
   hideAndRemoveClassNames(
@@ -25,7 +25,6 @@ DOM_VAR.startBtn.addEventListener("click", () => {
     JSON.parse(localStorage.getItem("arrayOfResultsInLocalStorage")) || {},
   );
 });
-
 // Topic section script
 DOM_VAR.topics.addEventListener("click", (event) => {
   userIsChoosingTopicAndComplexity(
@@ -35,7 +34,6 @@ DOM_VAR.topics.addEventListener("click", (event) => {
     DOM_VAR.goToTheComplexitySectionBtn,
   );
 });
-
 DOM_VAR.goToTheComplexitySectionBtn.addEventListener("click", () => {
   hideAndRemoveClassNames(
     DOM_VAR.chooseTopicSection,
@@ -45,7 +43,6 @@ DOM_VAR.goToTheComplexitySectionBtn.addEventListener("click", () => {
 DOM_VAR.topics.addEventListener("click", (event) => {
   applyActiveClassToClickedButton(event, "topic-btn", DOM_VAR.topicBtns);
 });
-
 // Complexity section script
 DOM_VAR.backToTheTopicsBtn.addEventListener("click", () => {
   hideAndRemoveClassNames(
@@ -53,7 +50,6 @@ DOM_VAR.backToTheTopicsBtn.addEventListener("click", () => {
     DOM_VAR.chooseTopicSection,
   );
 });
-
 DOM_VAR.complexityBtnsContainer.addEventListener("click", (event) => {
   userIsChoosingTopicAndComplexity(
     event,
@@ -85,111 +81,9 @@ DOM_VAR.startQuiz.addEventListener("click", () => {
   } else if (GEN_VAR.USER_CHOICE.complexity === "hard") {
     timeLimitation = GEN_VAR.USER_CHOICE.hardTimeLimit - 1;
   }
-
   startTimer(timeLimitation);
 });
-
 // Quiz section script
-
-let time = null;
-const countDownClock = document.querySelector(".count-down-clock");
-
-function startTimer(selectedMinutes) {
-  if (GEN_VAR.timer) {
-    clearInterval(GEN_VAR.timer);
-  }
-
-  GEN_VAR.minutes = selectedMinutes;
-  GEN_VAR.seconds = 59;
-
-  updateCountDown();
-  GEN_VAR.timer = setInterval(updateCountDown, 1000);
-}
-function updateCountDown() {
-  countDownClock.textContent = `${GEN_VAR.minutes < 10 ? "0" + GEN_VAR.minutes : GEN_VAR.minutes}:${GEN_VAR.seconds < 10 ? "0" + GEN_VAR.seconds : GEN_VAR.seconds}`;
-
-  if (GEN_VAR.minutes === 0 && GEN_VAR.seconds === 0) {
-    DOM_VAR.userPoints.textContent = getResults(
-      GEN_VAR.usersAnswersForquestions,
-    );
-    let historyOfResultsFromLocalStorage =
-      JSON.parse(localStorage.getItem("arrayOfResultsInLocalStorage")) ||
-      historyOfResults;
-    for (let i in historyOfResults) {
-      console.log(i);
-      if (historyOfResultsFromLocalStorage[`${i}`] !== null) {
-        let topicLevel = document.querySelector(`.${i}`);
-        let userScore = topicLevel.querySelector(".user-score");
-        topicLevel.querySelector(".user-result").classList.remove("hide");
-        topicLevel.querySelector(".empty-result").classList.add("hide");
-        userScore.textContent = historyOfResultsFromLocalStorage[i];
-      }
-    }
-    let topicLevel = document.querySelector(
-      `.${GEN_VAR.USER_CHOICE.topic}-${GEN_VAR.USER_CHOICE.complexity}`,
-    );
-    console.log(topicLevel);
-
-    topicLevel.querySelector(".user-result").classList.remove("hide");
-    topicLevel.querySelector(".empty-result").classList.add("hide");
-    let userScore = topicLevel.querySelector(".user-score");
-    console.log(userScore);
-
-    let key = `${GEN_VAR.USER_CHOICE.topic}-${GEN_VAR.USER_CHOICE.complexity}`;
-    console.log(historyOfResultsFromLocalStorage[key]);
-    if (historyOfResultsFromLocalStorage[key] === null) {
-      console.log("it's null");
-      historyOfResultsFromLocalStorage[key] = getResults(
-        GEN_VAR.usersAnswersForquestions,
-      );
-    } else {
-      console.log("it's NOT null");
-
-      if (
-        historyOfResultsFromLocalStorage[key] >
-        getResults(GEN_VAR.usersAnswersForquestions)
-      ) {
-        historyOfResultsFromLocalStorage[key] =
-          historyOfResultsFromLocalStorage[key];
-      } else if (
-        historyOfResultsFromLocalStorage[key] ===
-        getResults(GEN_VAR.usersAnswersForquestions)
-      ) {
-        historyOfResultsFromLocalStorage[key] = getResults(
-          GEN_VAR.usersAnswersForquestions,
-        );
-      } else {
-        historyOfResultsFromLocalStorage[key] = getResults(
-          GEN_VAR.usersAnswersForquestions,
-        );
-      }
-    }
-
-    console.log(historyOfResults);
-    localStorage.setItem(
-      "arrayOfResultsInLocalStorage",
-      JSON.stringify(historyOfResultsFromLocalStorage),
-    );
-    let array = JSON.parse(
-      localStorage.getItem("arrayOfResultsInLocalStorage"),
-    );
-    console.log(array);
-    userScore.textContent = array[key];
-
-    countDownClock.textContent = "Time is up!";
-    clearInterval(GEN_VAR.timer);
-    hideAndRemoveClassNames(DOM_VAR.quizSection, DOM_VAR.resultsSection);
-    return;
-  }
-
-  if (GEN_VAR.seconds === 0) {
-    GEN_VAR.seconds = 59;
-    GEN_VAR.minutes--;
-  } else {
-    GEN_VAR.seconds--;
-  }
-}
-
 async function getQuestion() {
   try {
     let link = `js/${GEN_VAR.USER_CHOICE.topic}/${GEN_VAR.USER_CHOICE.complexity}.json`;
@@ -209,10 +103,11 @@ async function getQuestion() {
     console.log(error);
   }
 }
-
 DOM_VAR.answersOptionContainer.addEventListener("click", (event) => {
-  if (event.target.classList.contains("option")) {
-    let usersClick = Number(event.target.dataset.id);
+  let userClickedArea = event.target;
+
+  if (userClickedArea.classList.contains("option")) {
+    let usersClick = Number(userClickedArea.dataset.id);
     let correctAnswer = Number(GEN_VAR.dataClone[GEN_VAR.index].correct);
 
     if (usersClick === correctAnswer) {
@@ -224,8 +119,8 @@ DOM_VAR.answersOptionContainer.addEventListener("click", (event) => {
         element.disabled = true;
       });
 
-      event.target.classList.add("correct-answer");
-      event.target.classList.remove("wrong-answer");
+      userClickedArea.classList.add("correct-answer");
+      userClickedArea.classList.remove("wrong-answer");
     } else {
       GEN_VAR.usersAnswersForquestions[GEN_VAR.questionNumber] = "not correct";
       DOM_VAR.answersOptionsArray.forEach((element) => {
@@ -233,79 +128,15 @@ DOM_VAR.answersOptionContainer.addEventListener("click", (event) => {
         element.classList.remove("wrong-answer");
         element.disabled = true;
       });
-      event.target.classList.add("wrong-answer");
-      event.target.classList.remove("correct-answer");
+      userClickedArea.classList.add("wrong-answer");
+      userClickedArea.classList.remove("correct-answer");
     }
     if (GEN_VAR.questionNumber < GEN_VAR.quantityOfQuestions - 1) {
       setTimeout(() => {
         nextQuestion();
       }, 1000);
     } else if (GEN_VAR.questionNumber === GEN_VAR.quantityOfQuestions - 1) {
-      let historyOfResultsFromLocalStorage =
-        JSON.parse(localStorage.getItem("arrayOfResultsInLocalStorage")) ||
-        historyOfResults;
-      for (let i in historyOfResults) {
-        console.log(i);
-        if (historyOfResultsFromLocalStorage[`${i}`] !== null) {
-          let topicLevel = document.querySelector(`.${i}`);
-          let userScore = topicLevel.querySelector(".user-score");
-          topicLevel.querySelector(".user-result").classList.remove("hide");
-          topicLevel.querySelector(".empty-result").classList.add("hide");
-          userScore.textContent = historyOfResultsFromLocalStorage[i];
-        }
-      }
-
-      let topicLevel = document.querySelector(
-        `.${GEN_VAR.USER_CHOICE.topic}-${GEN_VAR.USER_CHOICE.complexity}`,
-      );
-      console.log(topicLevel);
-
-      topicLevel.querySelector(".user-result").classList.remove("hide");
-      topicLevel.querySelector(".empty-result").classList.add("hide");
-      let userScore = topicLevel.querySelector(".user-score");
-      console.log(userScore);
-
-      let key = `${GEN_VAR.USER_CHOICE.topic}-${GEN_VAR.USER_CHOICE.complexity}`;
-      console.log(historyOfResultsFromLocalStorage[key]);
-      if (historyOfResultsFromLocalStorage[key] === null) {
-        console.log("it's null");
-        historyOfResultsFromLocalStorage[key] = getResults(
-          GEN_VAR.usersAnswersForquestions,
-        );
-      } else {
-        console.log("it's NOT null");
-
-        if (
-          historyOfResultsFromLocalStorage[key] >
-          getResults(GEN_VAR.usersAnswersForquestions)
-        ) {
-          historyOfResultsFromLocalStorage[key] =
-            historyOfResultsFromLocalStorage[key];
-        } else if (
-          historyOfResultsFromLocalStorage[key] ===
-          getResults(GEN_VAR.usersAnswersForquestions)
-        ) {
-          historyOfResultsFromLocalStorage[key] = getResults(
-            GEN_VAR.usersAnswersForquestions,
-          );
-        } else {
-          historyOfResultsFromLocalStorage[key] = getResults(
-            GEN_VAR.usersAnswersForquestions,
-          );
-        }
-      }
-
-      console.log(historyOfResults);
-      localStorage.setItem(
-        "arrayOfResultsInLocalStorage",
-        JSON.stringify(historyOfResultsFromLocalStorage),
-      );
-      let array = JSON.parse(
-        localStorage.getItem("arrayOfResultsInLocalStorage"),
-      );
-      console.log(array);
-      userScore.textContent = array[key];
-
+      insertResultsIntoResultSection();
       setTimeout(() => {
         lastQuestion();
       }, 1000);
@@ -315,9 +146,7 @@ DOM_VAR.answersOptionContainer.addEventListener("click", (event) => {
     return;
   }
 });
-
-// Result section script
-
+// PLAY AGAIN BUTTON
 DOM_VAR.playAgainBtn.addEventListener("click", () => {
   DOM_VAR.resultsSection.classList.add("hide");
   DOM_VAR.chooseTopicSection.classList.remove("hide");
@@ -343,24 +172,11 @@ DOM_VAR.playAgainBtn.addEventListener("click", () => {
   GEN_VAR.questionNumber = 0;
 });
 
-const reluseBtn = document.querySelector(".reluse-btn");
-const ruelsDescription = document.querySelector(".ruels-description");
-reluseBtn.addEventListener("click", () => {
-  ruelsDescription.classList.remove("hide");
-});
-const closeRulesBtn = document.querySelector(".close-rules-btn");
-closeRulesBtn.addEventListener("click", () => {
-  ruelsDescription.classList.add("hide");
+// RESLES POP-UP WINDOW
+DOM_VAR.reluseBtn.addEventListener("click", () => {
+  DOM_VAR.ruelsDescription.classList.remove("hide");
 });
 
-const historyOfResults = {
-  "front-end-easy": null,
-  "front-end-medium": null,
-  "front-end-hard": null,
-  "pop-culture-easy": null,
-  "pop-culture-medium": null,
-  "pop-culture-hard": null,
-  "random-easy": null,
-  "random-medium": null,
-  "random-hard": null,
-};
+DOM_VAR.closeRulesBtn.addEventListener("click", () => {
+  DOM_VAR.ruelsDescription.classList.add("hide");
+});
