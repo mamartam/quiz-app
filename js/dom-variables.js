@@ -37,4 +37,5 @@ export const DOM_VAR = {
   rulesBtn: document.querySelector(".rules-btn"),
   rulesDescription: document.querySelector(".rules-description"),
   closeRulesBtn: document.querySelector(".close-rules-btn"),
+  progressBarContainer: document.querySelector(".progress-bar-container"),
 };
