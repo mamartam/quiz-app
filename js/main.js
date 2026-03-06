@@ -14,6 +14,7 @@ import {
   updateCountDown,
   insertResultsIntoResultSection,
   creatinfResultsCards,
+  creatingProgressBar,
 } from "./functions.js";
 // END FUNCTIONS SECTION------------------------------------
 // Welcome page section script
@@ -97,9 +98,10 @@ async function getQuestion() {
     GEN_VAR.randomNumber = getRandomNumber(GEN_VAR.dataClone.length);
     GEN_VAR.index = GEN_VAR.randomNumber - 1;
     GEN_VAR.quantityOfQuestions =
-      GEN_VAR.dataClone.length >= 10 ? 3 : GEN_VAR.dataClone.length;
+      GEN_VAR.dataClone.length >= 10 ? 10 : GEN_VAR.dataClone.length;
 
     insertingDataIntoHTMLTag(GEN_VAR.dataClone, GEN_VAR.index);
+    creatingProgressBar();
     console.log("Success in loading data!");
   } catch (error) {
     console.log(error);
@@ -134,11 +136,19 @@ DOM_VAR.answersOptionContainer.addEventListener("click", (event) => {
       userClickedArea.classList.remove("correct-answer");
     }
     if (GEN_VAR.questionNumber < GEN_VAR.quantityOfQuestions - 1) {
+      document
+        .querySelector(`.question-${GEN_VAR.questionNumber}`)
+        .querySelector(".bar-color")
+        .classList.add("completed");
       setTimeout(() => {
         nextQuestion();
       }, 1000);
     } else if (GEN_VAR.questionNumber === GEN_VAR.quantityOfQuestions - 1) {
       insertResultsIntoResultSection();
+      document
+        .querySelector(`.question-${GEN_VAR.questionNumber}`)
+        .querySelector(".bar-color")
+        .classList.add("completed");
       setTimeout(() => {
         lastQuestion();
       }, 1000);
@@ -172,6 +182,10 @@ DOM_VAR.playAgainBtn.addEventListener("click", () => {
     element.disabled = false;
   });
   GEN_VAR.questionNumber = 0;
+  const progressBarBoxes = document.querySelectorAll(".bar-color");
+  Array.from(progressBarBoxes).forEach((element) => {
+    element.classList.remove("completed");
+  });
 });
 
 // RESLES POP-UP WINDOW
