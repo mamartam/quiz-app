@@ -279,6 +279,54 @@ main {
 .option:hover {
   outline: 2px solid var(--orange);
 }
+.progress-bar-container {
+  width: 100%;
+  height: 15px;
+  background-color: #280a82;
+  display: flex;
+  flex-direction: row;
+  border-radius: 1em;
+  overflow: hidden;
+  gap: 0;
+}
+.bar-box {
+  width: 30px;
+  height: inherit;
+  flex-grow: 1;
+  /* border: 1px solid green; */
+  margin: 0;
+  padding: 0;
+}
+.bar-color {
+  width: 100%;
+  height: inherit;
+  background-color: transparent;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+.bar-color.completed {
+  animation: animationForBarBox 1s linear;
+  width: 100%;
+  height: inherit;
+  background-color: var(--orange);
+}
+@keyframes animationForBarBox {
+  from {
+    width: 0px;
+    background-color: var(--orange);
+  }
+  to {
+    /* transform: scaleX(1); */
+    width: 100%;
+    background-color: var(--orange);
+  }
+}
+
 /* .quiz-section .navigation-btns {
   width: 100%;
   height: 70px;
