@@ -241,6 +241,15 @@ main {
   justify-content: end;
   align-items: center;
 }
+.clock-container img {
+  display: block;
+  width: 25px;
+  height: 25px;
+  margin-left: 0.5em;
+}
+.last-seconds {
+  color: var(--red);
+}
 .question-container {
   background-color: var(--white);
   color: var(--dark-purple);
