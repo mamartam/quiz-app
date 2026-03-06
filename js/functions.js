@@ -98,15 +98,19 @@ export function startTimer(selectedMinutes) {
 }
 export function updateCountDown() {
   DOM_VAR.countDownClock.textContent = `${GEN_VAR.minutes < 10 ? "0" + GEN_VAR.minutes : GEN_VAR.minutes}:${GEN_VAR.seconds < 10 ? "0" + GEN_VAR.seconds : GEN_VAR.seconds}`;
-
+  if (GEN_VAR.minutes === 0 && GEN_VAR.seconds === 59) {
+    DOM_VAR.countDownClock.classList.add("last-seconds");
+  }
   if (GEN_VAR.minutes === 0 && GEN_VAR.seconds === 0) {
     insertResultsIntoResultSection();
     DOM_VAR.userPoints.textContent = getResults(
       GEN_VAR.usersAnswersForquestions,
     );
+
     DOM_VAR.countDownClock.textContent = "Time is up!";
     clearInterval(GEN_VAR.timer);
     hideAndRemoveClassNames(DOM_VAR.quizSection, DOM_VAR.resultsSection);
+    DOM_VAR.countDownClock.classList.remove("last-seconds");
     return;
   }
 
