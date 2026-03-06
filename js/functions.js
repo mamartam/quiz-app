@@ -37,6 +37,7 @@ export function getRandomNumber(max) {
 }
 export function insertingDataIntoHTMLTag(array, arrayElementIndex) {
   DOM_VAR.numberOfQuestion.textContent = GEN_VAR.questionNumber + 1;
+  // console.log(DOM_VAR.numberOfQuestion);
   DOM_VAR.questionHeader.textContent = array[arrayElementIndex].question;
   DOM_VAR.answersOptionsArray.forEach((element, index) => {
     element.textContent = array[arrayElementIndex].options[index];
@@ -208,4 +209,17 @@ export function creatinfResultsCards() {
             </div>`;
     }
   }
+}
+
+export function creatingProgressBar() {
+  DOM_VAR.progressBarContainer.innerHTML = "";
+  let arrayOfBaxBoxes = [];
+
+  for (let i = 0; i < GEN_VAR.quantityOfQuestions; i++) {
+    arrayOfBaxBoxes.push(
+      `<div class="bar-box question-${i}"><div class="bar-color"></div></div>`,
+    );
+  }
+
+  DOM_VAR.progressBarContainer.innerHTML = arrayOfBaxBoxes.join("");
 }
