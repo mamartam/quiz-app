@@ -34,7 +34,7 @@ export const DOM_VAR = {
   playAgainBtn: document.querySelector(".play-again"),
 
   countDownClock: document.querySelector(".count-down-clock"),
-  reluseBtn: document.querySelector(".reluse-btn"),
-  ruelsDescription: document.querySelector(".ruels-description"),
+  rulesBtn: document.querySelector(".rules-btn"),
+  rulesDescription: document.querySelector(".rules-description"),
   closeRulesBtn: document.querySelector(".close-rules-btn"),
 };

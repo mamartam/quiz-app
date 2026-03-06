@@ -75,7 +75,7 @@ main {
   display: flex;
   justify-content: end;
 }
-.reluse-btn {
+.rules-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -89,7 +89,7 @@ main {
   background-color: var(--white);
   /* padding: 1em; */
 }
-.ruels-description {
+.rules-description {
   position: absolute;
   top: 0;
   background-color: var(--white);
@@ -101,19 +101,19 @@ main {
   border-radius: 1em;
   padding: 2em;
 }
-.ruels-description h3 {
+.rules-description h3 {
   margin: 1em 0;
 }
-.ruels-description p {
+.rules-description p {
   margin-bottom: 1em;
 }
-.ruels-description li {
+.rules-description li {
   display: flex;
   flex-direction: row;
   justify-content: start;
   align-items: start;
 }
-.ruels-description li img {
+.rules-description li img {
   width: 1em;
   margin-right: 0.5em;
 }

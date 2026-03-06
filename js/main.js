@@ -175,10 +175,10 @@ DOM_VAR.playAgainBtn.addEventListener("click", () => {
 });
 
 // RESLES POP-UP WINDOW
-DOM_VAR.reluseBtn.addEventListener("click", () => {
-  DOM_VAR.ruelsDescription.classList.remove("hide");
+DOM_VAR.rulesBtn.addEventListener("click", () => {
+  DOM_VAR.rulesDescription.classList.remove("hide");
 });
 
 DOM_VAR.closeRulesBtn.addEventListener("click", () => {
-  DOM_VAR.ruelsDescription.classList.add("hide");
+  DOM_VAR.rulesDescription.classList.add("hide");
 });
