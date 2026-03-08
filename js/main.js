@@ -73,8 +73,12 @@ DOM_VAR.startQuiz.addEventListener("click", () => {
   DOM_VAR.quizSection.classList.remove("hide");
   DOM_VAR.complexitySection.classList.add("hide");
   console.log(GEN_VAR.USER_CHOICE);
-  DOM_VAR.quizInfoTopic.textContent = GEN_VAR.USER_CHOICE.topic;
-  DOM_VAR.quizInfoLevel.textContent = GEN_VAR.USER_CHOICE.complexity;
+  DOM_VAR.quizInfoTopic.textContent =
+    GEN_VAR.USER_CHOICE.topic[0].toUpperCase() +
+    GEN_VAR.USER_CHOICE.topic.slice(1);
+  DOM_VAR.quizInfoLevel.textContent =
+    GEN_VAR.USER_CHOICE.complexity[0].toUpperCase() +
+    GEN_VAR.USER_CHOICE.complexity.slice(1);
   getQuestion();
   let timeLimitation = 0;
   if (GEN_VAR.USER_CHOICE.complexity === "easy") {
