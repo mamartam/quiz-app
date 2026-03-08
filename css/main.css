@@ -30,7 +30,6 @@ body {
   background-color: var(--purple);
   color: var(--white);
   font-family: "Poppins", sans-serif;
-  position: relative;
 }
 main {
   width: 100%;
@@ -38,6 +37,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 /* WELCOME SECTION */
@@ -67,7 +67,6 @@ main {
 /* CHOOSE TOPIC SECTION */
 
 .rules-container {
-  /* background-color: red; */
   width: 100%;
   position: absolute;
   top: 1em;
@@ -88,7 +87,6 @@ main {
   color: var(--purple);
   font-size: 1em;
   background-color: var(--white);
-  /* padding: 1em; */
 }
 .rules-description {
   position: absolute;
@@ -120,9 +118,7 @@ main {
 }
 
 .rules-close-btn-container {
-  /* background-color: red; */
   width: 100%;
-  /* padding: 1em; */
   display: flex;
   justify-content: end;
 }
@@ -294,7 +290,6 @@ main {
   width: 30px;
   height: inherit;
   flex-grow: 1;
-  /* border: 1px solid green; */
   margin: 0;
   padding: 0;
 }
@@ -327,23 +322,6 @@ main {
     background-color: var(--orange);
   }
 }
-
-/* .quiz-section .navigation-btns {
-  width: 100%;
-  height: 70px;
-  display: flex;
-  justify-content: end;
-  align-items: center;
-} */
-/* .next-question-btn,
-.finish-btn {
-  background-color: #ff9051;
-  border: none;
-  padding: 1.5em;
-  border-radius: 1em;
-  color: white;
-  font-weight: 700;
-} */
 /* RESULT SECTION */
 .results-section {
   display: flex;
@@ -398,11 +376,8 @@ main {
   align-items: center;
 }
 .history-section::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
 }
-/* .front-end-result {
-  background-color: var(--green);
-} */
 div[class^="card front-end"] {
   background-color: var(--green);
 }
@@ -454,4 +429,20 @@ div[class^="card random"] {
 }
 .hide {
   display: none;
+}
+@media screen and (min-width: 600px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  main {
+    max-width: 500px;
+  }
+  .history-section {
+    width: 500px;
+  }
+  .rules-description {
+    max-width: 500px;
+  }
 }
