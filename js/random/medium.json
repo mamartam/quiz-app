@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "category": "random",
+    "difficulty": "medium",
+    "question": "Which country has the most natural lakes in the world?",
+    "options": ["USA", "Canada", "Russia", "Brazil"],
+    "correct": 1
+  },
+  {
+    "id": 2,
+    "category": "random",
+    "difficulty": "medium",
+    "question": "What is the only fruit that has its seeds on the outside?",
+    "options": ["Blueberry", "Strawberry", "Kiwi", "Mango"],
+    "correct": 1
+  },
+  {
+    "id": 3,
+    "category": "random",
+    "difficulty": "medium",
+    "question": "What is the chemical symbol for Gold?",
+    "options": ["Gd", "Ag", "Au", "Fe"],
+    "correct": 2
+  },
+  {
+    "id": 4,
+    "category": "random",
+    "difficulty": "medium",
+    "question": "In which year did the Titanic sink?",
+    "options": ["1910", "1912", "1914", "1920"],
+    "correct": 1
+  },
+  {
+    "id": 5,
+    "category": "random",
+    "difficulty": "medium",
+    "question": "How many hearts does an octopus have?",
+    "options": ["1", "2", "3", "4"],
+    "correct": 2
+  },
+  {
+    "id": 6,
+    "category": "random",
+    "difficulty": "medium",
+    "question": "Which element is the most abundant in the Earth's atmosphere?",
+    "options": ["Oxygen", "Carbon Dioxide", "Hydrogen", "Nitrogen"],
+    "correct": 3
+  },
+  {
+    "id": 7,
+    "category": "random",
+    "difficulty": "medium",
+    "question": "Who was the first person to reach the South Pole?",
+    "options": [
+      "Robert Falcon Scott",
+      "Roald Amundsen",
+      "Ernest Shackleton",
+      "Richard Byrd"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 8,
+    "category": "random",
+    "difficulty": "medium",
+    "question": "What is the smallest country in the world by land area?",
+    "options": ["Monaco", "Nauru", "Vatican City", "San Marino"],
+    "correct": 2
+  },
+  {
+    "id": 9,
+    "category": "random",
+    "difficulty": "medium",
+    "question": "What is the main component of a pearl?",
+    "options": [
+      "Calcium Carbonate",
+      "Magnesium Oxide",
+      "Silicon Dioxide",
+      "Sodium Chloride"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 10,
+    "category": "random",
+    "difficulty": "medium",
+    "question": "Which desert is the largest in the world?",
+    "options": ["Sahara", "Gobi", "Antarctic Desert", "Arabian Desert"],
+    "correct": 2
+  },
+  {
+    "id": 11,
+    "category": "random",
+    "difficulty": "medium",
+    "question": "What is the longest river in the world?",
+    "options": ["Amazon", "Nile", "Yangtze", "Mississippi"],
+    "correct": 1
+  },
+  {
+    "id": 12,
+    "category": "random",
+    "difficulty": "medium",
+    "question": "How many bones are there in an adult human body?",
+    "options": ["196", "206", "216", "226"],
+    "correct": 1
+  },
+  {
+    "id": 13,
+    "category": "random",
+    "difficulty": "medium",
+    "question": "Which planet has the most moons?",
+    "options": ["Jupiter", "Saturn", "Uranus", "Neptune"],
+    "correct": 1
+  },
+  {
+    "id": 14,
+    "category": "random",
+    "difficulty": "medium",
+    "question": "Who painted 'The Starry Night'?",
+    "options": [
+      "Pablo Picasso",
+      "Claude Monet",
+      "Vincent van Gogh",
+      "Salvador Dalí"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 15,
+    "category": "random",
+    "difficulty": "medium",
+    "question": "What is the capital city of Australia?",
+    "options": ["Sydney", "Melbourne", "Canberra", "Perth"],
+    "correct": 2
+  },
+  {
+    "id": 16,
+    "category": "random",
+    "difficulty": "medium",
+    "question": "Which animal has the highest blood pressure?",
+    "options": ["Blue Whale", "Elephant", "Giraffe", "Hippopotamus"],
+    "correct": 2
+  },
+  {
+    "id": 17,
+    "category": "random",
+    "difficulty": "medium",
+    "question": "In what year did the Berlin Wall fall?",
+    "options": ["1987", "1988", "1989", "1991"],
+    "correct": 2
+  },
+  {
+    "id": 18,
+    "category": "random",
+    "difficulty": "medium",
+    "question": "What is the most spoken native language in the world?",
+    "options": ["English", "Spanish", "Mandarin Chinese", "Hindi"],
+    "correct": 2
+  },
+  {
+    "id": 19,
+    "category": "random",
+    "difficulty": "medium",
+    "question": "What is the currency of Japan?",
+    "options": ["Won", "Yuan", "Baht", "Yen"],
+    "correct": 3
+  },
+  {
+    "id": 20,
+    "category": "random",
+    "difficulty": "medium",
+    "question": "Which scientist developed the theory of relativity?",
+    "options": [
+      "Isaac Newton",
+      "Albert Einstein",
+      "Nikola Tesla",
+      "Marie Curie"
+    ],
+    "correct": 1
+  }
+]
