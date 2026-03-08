@@ -437,7 +437,7 @@ div[class^="card random"] {
     align-items: center;
   }
   main {
-    max-width: 500px;
+    width: 500px;
   }
   .history-section {
     width: 500px;
