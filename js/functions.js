@@ -1,5 +1,4 @@
 // CONNECTION WITH DOM
-
 import { DOM_VAR } from "./dom-variables.js";
 // GENERAL VARIABLES AND STARTING VALUES
 import { GEN_VAR } from "./general-variables.js";
@@ -105,14 +104,9 @@ export function updateCountDown() {
 
 export function insertResultsIntoResultSection() {
   let usersResult = countCorrectAnswers(GEN_VAR.usersAnswersForquestions);
-  // Беремо дані - якщо в сховищі щось є то зі сховища, якщо немає, то масив із Null значеннями
   let historyOfResultsFromLocalStorage =
     JSON.parse(localStorage.getItem("arrayOfResultsInLocalStorage")) ||
     GEN_VAR.historyOfResults;
-
-  // тут ми проходимося по об'єктах і беремо їх властивості і беремо їх значення,
-  // якщо значення не null - то ми прибираємо дефолтнку картинку пустого значення
-  // і туди вписуємо результат
   for (let i in GEN_VAR.historyOfResults) {
     if (historyOfResultsFromLocalStorage[`${i}`] !== null) {
       let topicLevel = document.querySelector(`.${i}`);
@@ -136,26 +130,26 @@ export function insertResultsIntoResultSection() {
   let key = `${GEN_VAR.USER_CHOICE.topic}-${GEN_VAR.USER_CHOICE.complexity}`;
 
   console.log(historyOfResultsFromLocalStorage[key]);
-  // якщо ми пройшли квіз, і бачимо, що занчення null, то вписуємо отримані результати
+
   if (historyOfResultsFromLocalStorage[key] === null) {
     historyOfResultsFromLocalStorage[key] = usersResult;
-    // якщо ми пройшли квіз, і бачимо, що занчення не null, то порівнюємо ці результати
+
   } else {
-    // якщо поточна кількість балів менша за ту яка є в локальному сховищі, то залишаємо ту яка є в локальному сховищі
+
     if (historyOfResultsFromLocalStorage[key] > usersResult) {
       historyOfResultsFromLocalStorage[key] =
         historyOfResultsFromLocalStorage[key];
     } else if (
-      // якщо поточна кількість рівна з тою, яка є в локал стореджі, то ми записуємо нове значення, бо воно в принципі теж саме
+
       historyOfResultsFromLocalStorage[key] === usersResult
     ) {
       historyOfResultsFromLocalStorage[key] = usersResult;
     } else {
-      // якщо нова кількість відповідей більша за ту яка є в локальному сховищі, то записуєму нове значення
+
       historyOfResultsFromLocalStorage[key] = usersResult;
     }
   }
-  // І відповідно записуємо отримане значення у локальне сховище
+
   localStorage.setItem(
     "arrayOfResultsInLocalStorage",
     JSON.stringify(historyOfResultsFromLocalStorage),
@@ -163,24 +157,13 @@ export function insertResultsIntoResultSection() {
   let array = JSON.parse(localStorage.getItem("arrayOfResultsInLocalStorage"));
   console.log(array);
   userScore.textContent = array[key];
-  // тут записуємо в результати значення з локального сховища, бо там якраз
-  // зберігються найкраші відпоіді, які нам потрібно відлобразити на картках
-}
 
-// =================================================================
-// =================================================================
-// =================================================================
-// =================================================================
-// =================================================================
-// =================================================================
-// =================================================================
-// good functions
-// Функція яка видає рандовне число з діапазону
+}
 export function getRandomNumber(max) {
   let min = 1;
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
-// Функція яка рахує правильні відповіді з масиву відповідей користувача
+
 export function countCorrectAnswers(arrayOfUserAnswers) {
   let counter = 0;
   arrayOfUserAnswers.forEach((element) => {
@@ -217,7 +200,6 @@ export function creatingResultsCards() {
   console.log(arrayOfResultsCard);
 }
 
-// Динамічне створення контейнерів в залежності від кількості запитань у прогрес бар
 export function creatingProgressBar() {
   DOM_VAR.progressBarContainer.innerHTML = "";
   let arrayOfBarBoxes = [];
@@ -240,7 +222,6 @@ export function startTimer(selectedMinutes) {
   updateCountDown();
   GEN_VAR.timer = setInterval(updateCountDown, 1000);
 }
-// Переводить рядок де перша літера велика
 export function capitalize(str) {
   return str[0].toUpperCase() + str.slice(1);
 }
