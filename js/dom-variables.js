@@ -38,4 +38,8 @@ export const DOM_VAR = {
   rulesDescription: document.querySelector(".rules-description"),
   closeRulesBtn: document.querySelector(".close-rules-btn"),
   progressBarContainer: document.querySelector(".progress-bar-container"),
+  historySection: document.querySelector(".history-section"),
+  CorrectBtnAudio: document.querySelector(".CorrectBtnAudio"),
+  WrongBtnAudio: document.querySelector(".WrongBtnAudio"),
+  gameReveal: document.querySelector(".gameReveal"),
 };

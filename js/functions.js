@@ -31,27 +31,14 @@ export function userIsChoosingTopicAndComplexity(event, array, key, btn) {
   }
 }
 
-export function getRandomNumber(max) {
-  let min = 1;
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
 export function insertingDataIntoHTMLTag(array, arrayElementIndex) {
   DOM_VAR.numberOfQuestion.textContent = GEN_VAR.questionNumber + 1;
-  // console.log(DOM_VAR.numberOfQuestion);
   DOM_VAR.questionHeader.textContent = array[arrayElementIndex].question;
   DOM_VAR.answersOptionsArray.forEach((element, index) => {
     element.textContent = array[arrayElementIndex].options[index];
   });
 }
-export function getResults(array) {
-  let countCorrectAnswers = 0;
-  array.forEach((element) => {
-    if (element === "correct") {
-      countCorrectAnswers++;
-    }
-  });
-  return countCorrectAnswers;
-}
+
 export function applyActiveClassToClickedButton(
   event,
   elementClassName,
@@ -82,21 +69,14 @@ export function nextQuestion() {
   insertingDataIntoHTMLTag(GEN_VAR.dataClone, GEN_VAR.index);
 }
 export function lastQuestion() {
-  DOM_VAR.userPoints.textContent = getResults(GEN_VAR.usersAnswersForquestions);
+  DOM_VAR.userPoints.textContent = countCorrectAnswers(
+    GEN_VAR.usersAnswersForquestions,
+  );
   hideAndRemoveClassNames(DOM_VAR.quizSection, DOM_VAR.resultsSection);
   clearInterval(GEN_VAR.timer);
+  playGameReveal();
 }
-export function startTimer(selectedMinutes) {
-  if (GEN_VAR.timer) {
-    clearInterval(GEN_VAR.timer);
-  }
 
-  GEN_VAR.minutes = selectedMinutes;
-  GEN_VAR.seconds = 59;
-
-  updateCountDown();
-  GEN_VAR.timer = setInterval(updateCountDown, 1000);
-}
 export function updateCountDown() {
   DOM_VAR.countDownClock.textContent = `${GEN_VAR.minutes < 10 ? "0" + GEN_VAR.minutes : GEN_VAR.minutes}:${GEN_VAR.seconds < 10 ? "0" + GEN_VAR.seconds : GEN_VAR.seconds}`;
   if (GEN_VAR.minutes === 0 && GEN_VAR.seconds === 59) {
@@ -104,7 +84,7 @@ export function updateCountDown() {
   }
   if (GEN_VAR.minutes === 0 && GEN_VAR.seconds === 0) {
     insertResultsIntoResultSection();
-    DOM_VAR.userPoints.textContent = getResults(
+    DOM_VAR.userPoints.textContent = countCorrectAnswers(
       GEN_VAR.usersAnswersForquestions,
     );
 
@@ -124,9 +104,15 @@ export function updateCountDown() {
 }
 
 export function insertResultsIntoResultSection() {
+  let usersResult = countCorrectAnswers(GEN_VAR.usersAnswersForquestions);
+  // Беремо дані - якщо в сховищі щось є то зі сховища, якщо немає, то масив із Null значеннями
   let historyOfResultsFromLocalStorage =
     JSON.parse(localStorage.getItem("arrayOfResultsInLocalStorage")) ||
     GEN_VAR.historyOfResults;
+
+  // тут ми проходимося по об'єктах і беремо їх властивості і беремо їх значення,
+  // якщо значення не null - то ми прибираємо дефолтнку картинку пустого значення
+  // і туди вписуємо результат
   for (let i in GEN_VAR.historyOfResults) {
     if (historyOfResultsFromLocalStorage[`${i}`] !== null) {
       let topicLevel = document.querySelector(`.${i}`);
@@ -148,36 +134,28 @@ export function insertResultsIntoResultSection() {
   console.log(userScore);
 
   let key = `${GEN_VAR.USER_CHOICE.topic}-${GEN_VAR.USER_CHOICE.complexity}`;
-  console.log(historyOfResultsFromLocalStorage[key]);
-  if (historyOfResultsFromLocalStorage[key] === null) {
-    console.log("it's null");
-    historyOfResultsFromLocalStorage[key] = getResults(
-      GEN_VAR.usersAnswersForquestions,
-    );
-  } else {
-    console.log("it's NOT null");
 
-    if (
-      historyOfResultsFromLocalStorage[key] >
-      getResults(GEN_VAR.usersAnswersForquestions)
-    ) {
+  console.log(historyOfResultsFromLocalStorage[key]);
+  // якщо ми пройшли квіз, і бачимо, що занчення null, то вписуємо отримані результати
+  if (historyOfResultsFromLocalStorage[key] === null) {
+    historyOfResultsFromLocalStorage[key] = usersResult;
+    // якщо ми пройшли квіз, і бачимо, що занчення не null, то порівнюємо ці результати
+  } else {
+    // якщо поточна кількість балів менша за ту яка є в локальному сховищі, то залишаємо ту яка є в локальному сховищі
+    if (historyOfResultsFromLocalStorage[key] > usersResult) {
       historyOfResultsFromLocalStorage[key] =
         historyOfResultsFromLocalStorage[key];
     } else if (
-      historyOfResultsFromLocalStorage[key] ===
-      getResults(GEN_VAR.usersAnswersForquestions)
+      // якщо поточна кількість рівна з тою, яка є в локал стореджі, то ми записуємо нове значення, бо воно в принципі теж саме
+      historyOfResultsFromLocalStorage[key] === usersResult
     ) {
-      historyOfResultsFromLocalStorage[key] = getResults(
-        GEN_VAR.usersAnswersForquestions,
-      );
+      historyOfResultsFromLocalStorage[key] = usersResult;
     } else {
-      historyOfResultsFromLocalStorage[key] = getResults(
-        GEN_VAR.usersAnswersForquestions,
-      );
+      // якщо нова кількість відповідей більша за ту яка є в локальному сховищі, то записуєму нове значення
+      historyOfResultsFromLocalStorage[key] = usersResult;
     }
   }
-
-  console.log(GEN_VAR.historyOfResults);
+  // І відповідно записуємо отримане значення у локальне сховище
   localStorage.setItem(
     "arrayOfResultsInLocalStorage",
     JSON.stringify(historyOfResultsFromLocalStorage),
@@ -185,20 +163,45 @@ export function insertResultsIntoResultSection() {
   let array = JSON.parse(localStorage.getItem("arrayOfResultsInLocalStorage"));
   console.log(array);
   userScore.textContent = array[key];
+  // тут записуємо в результати значення з локального сховища, бо там якраз
+  // зберігються найкраші відпоіді, які нам потрібно відлобразити на картках
 }
-export function creatinfResultsCards() {
-  const historySection = document.querySelector(".history-section");
-  historySection.innerHTML = "";
-  const howMuchLevels = GEN_VAR.quizComplexityArray.length;
-  const howMushTopics = GEN_VAR.quizTopicsArray.length;
-  for (let i = 0; i < howMushTopics; i++) {
-    for (let j = 0; j < howMuchLevels; j++) {
-      console.log(
-        `${GEN_VAR.quizTopicsArray[i]}-${GEN_VAR.quizComplexityArray[j]}`,
-      );
-      historySection.innerHTML += `<div class="card ${GEN_VAR.quizTopicsArray[i]}-${GEN_VAR.quizComplexityArray[j]}">
-            <h4>${GEN_VAR.quizTopicsArray[i][0].toUpperCase()}${GEN_VAR.quizTopicsArray[i].slice(1)} <img src="./assets/images/${GEN_VAR.quizTopicsArray[i]}-icon.svg" alt="" /></h4>
-            <p>${GEN_VAR.quizComplexityArray[j][0].toUpperCase()}${GEN_VAR.quizComplexityArray[j].slice(1)} Level</p>
+
+// =================================================================
+// =================================================================
+// =================================================================
+// =================================================================
+// =================================================================
+// =================================================================
+// =================================================================
+// good functions
+// Функція яка видає рандовне число з діапазону
+export function getRandomNumber(max) {
+  let min = 1;
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+// Функція яка рахує правильні відповіді з масиву відповідей користувача
+export function countCorrectAnswers(arrayOfUserAnswers) {
+  let counter = 0;
+  arrayOfUserAnswers.forEach((element) => {
+    if (element === "correct") {
+      counter++;
+    }
+  });
+  return counter;
+}
+
+export function creatingResultsCards() {
+  const howManyLevels = GEN_VAR.quizComplexityArray.length;
+  const howManyTopics = GEN_VAR.quizTopicsArray.length;
+  let arrayOfResultsCard = [];
+  DOM_VAR.historySection.innerHTML = "";
+
+  for (let i = 0; i < howManyTopics; i++) {
+    for (let j = 0; j < howManyLevels; j++) {
+      arrayOfResultsCard.push(`<div class="card ${GEN_VAR.quizTopicsArray[i]}-${GEN_VAR.quizComplexityArray[j]}">
+            <h4>${capitalize(GEN_VAR.quizTopicsArray[i])} <img src="./assets/images/${GEN_VAR.quizTopicsArray[i]}-icon.svg" alt="" /></h4>
+            <p>${capitalize(GEN_VAR.quizComplexityArray[j])} Level</p>
             <p class="user-result hide"><span class="user-score"></span>/10</p>
             <div class="empty-result">
               <img
@@ -206,20 +209,70 @@ export function creatinfResultsCards() {
                 alt=""
               />
               <p>No achievements yet...</p>
-            </div>`;
+            </div></div>`);
     }
   }
+
+  DOM_VAR.historySection.innerHTML = arrayOfResultsCard.join("");
+  console.log(arrayOfResultsCard);
 }
 
+// Динамічне створення контейнерів в залежності від кількості запитань у прогрес бар
 export function creatingProgressBar() {
   DOM_VAR.progressBarContainer.innerHTML = "";
-  let arrayOfBaxBoxes = [];
+  let arrayOfBarBoxes = [];
 
   for (let i = 0; i < GEN_VAR.quantityOfQuestions; i++) {
-    arrayOfBaxBoxes.push(
+    arrayOfBarBoxes.push(
       `<div class="bar-box question-${i}"><div class="bar-color"></div></div>`,
     );
   }
 
-  DOM_VAR.progressBarContainer.innerHTML = arrayOfBaxBoxes.join("");
+  DOM_VAR.progressBarContainer.innerHTML = arrayOfBarBoxes.join("");
+}
+export function startTimer(selectedMinutes) {
+  if (GEN_VAR.timer) {
+    clearInterval(GEN_VAR.timer);
+  }
+  GEN_VAR.minutes = selectedMinutes;
+  GEN_VAR.seconds = 59;
+
+  updateCountDown();
+  GEN_VAR.timer = setInterval(updateCountDown, 1000);
+}
+// Переводить рядок де перша літера велика
+export function capitalize(str) {
+  return str[0].toUpperCase() + str.slice(1);
+}
+
+export function playCorrectSound() {
+  DOM_VAR.WrongBtnAudio.pause();
+  DOM_VAR.WrongBtnAudio.currentTime = 0;
+
+  DOM_VAR.gameReveal.pause();
+  DOM_VAR.gameReveal.currentTime = 0;
+
+  DOM_VAR.CorrectBtnAudio.currentTime = 0;
+  DOM_VAR.CorrectBtnAudio.play();
+}
+
+export function playWrongSound() {
+  DOM_VAR.CorrectBtnAudio.pause();
+  DOM_VAR.CorrectBtnAudio.currentTime = 0;
+
+  DOM_VAR.gameReveal.pause();
+  DOM_VAR.gameReveal.currentTime = 0;
+
+  DOM_VAR.WrongBtnAudio.currentTime = 0;
+  DOM_VAR.WrongBtnAudio.play();
+}
+export function playGameReveal() {
+  DOM_VAR.CorrectBtnAudio.pause();
+  DOM_VAR.CorrectBtnAudio.currentTime = 0;
+
+  DOM_VAR.WrongBtnAudio.pause();
+  DOM_VAR.WrongBtnAudio.currentTime = 0;
+
+  DOM_VAR.gameReveal.currentTime = 0;
+  DOM_VAR.gameReveal.play();
 }

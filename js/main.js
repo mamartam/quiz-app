@@ -6,19 +6,23 @@ import {
   userIsChoosingTopicAndComplexity,
   getRandomNumber,
   insertingDataIntoHTMLTag,
-  getResults,
+  countCorrectAnswers,
   applyActiveClassToClickedButton,
   nextQuestion,
   lastQuestion,
   startTimer,
   updateCountDown,
   insertResultsIntoResultSection,
-  creatinfResultsCards,
+  creatingResultsCards,
   creatingProgressBar,
+  capitalize,
+  playCorrectSound,
+  playWrongSound,
+  playGameReveal,
 } from "./functions.js";
 // END FUNCTIONS SECTION------------------------------------
 // Welcome page section script
-creatinfResultsCards();
+creatingResultsCards();
 DOM_VAR.startBtn.addEventListener("click", () => {
   hideAndRemoveClassNames(
     DOM_VAR.welcomePageSection,
@@ -73,12 +77,10 @@ DOM_VAR.startQuiz.addEventListener("click", () => {
   DOM_VAR.quizSection.classList.remove("hide");
   DOM_VAR.complexitySection.classList.add("hide");
   console.log(GEN_VAR.USER_CHOICE);
-  DOM_VAR.quizInfoTopic.textContent =
-    GEN_VAR.USER_CHOICE.topic[0].toUpperCase() +
-    GEN_VAR.USER_CHOICE.topic.slice(1);
-  DOM_VAR.quizInfoLevel.textContent =
-    GEN_VAR.USER_CHOICE.complexity[0].toUpperCase() +
-    GEN_VAR.USER_CHOICE.complexity.slice(1);
+  DOM_VAR.quizInfoTopic.textContent = capitalize(GEN_VAR.USER_CHOICE.topic);
+  DOM_VAR.quizInfoLevel.textContent = capitalize(
+    GEN_VAR.USER_CHOICE.complexity,
+  );
 
   let timeLimitation = 0;
   if (GEN_VAR.USER_CHOICE.complexity === "easy") {
@@ -122,6 +124,7 @@ DOM_VAR.answersOptionContainer.addEventListener("click", (event) => {
 
     if (usersClick === correctAnswer) {
       GEN_VAR.usersAnswersForquestions[GEN_VAR.questionNumber] = "correct";
+      playCorrectSound();
 
       DOM_VAR.answersOptionsArray.forEach((element) => {
         element.classList.remove("correct-answer");
@@ -133,6 +136,7 @@ DOM_VAR.answersOptionContainer.addEventListener("click", (event) => {
       userClickedArea.classList.remove("wrong-answer");
     } else {
       GEN_VAR.usersAnswersForquestions[GEN_VAR.questionNumber] = "not correct";
+      playWrongSound();
       DOM_VAR.answersOptionsArray.forEach((element) => {
         element.classList.remove("correct-answer");
         element.classList.remove("wrong-answer");
