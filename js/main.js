@@ -79,7 +79,7 @@ DOM_VAR.startQuiz.addEventListener("click", () => {
   DOM_VAR.quizInfoLevel.textContent =
     GEN_VAR.USER_CHOICE.complexity[0].toUpperCase() +
     GEN_VAR.USER_CHOICE.complexity.slice(1);
-  getQuestion();
+
   let timeLimitation = 0;
   if (GEN_VAR.USER_CHOICE.complexity === "easy") {
     timeLimitation = GEN_VAR.USER_CHOICE.easyTimeLimit - 1;
@@ -88,10 +88,10 @@ DOM_VAR.startQuiz.addEventListener("click", () => {
   } else if (GEN_VAR.USER_CHOICE.complexity === "hard") {
     timeLimitation = GEN_VAR.USER_CHOICE.hardTimeLimit - 1;
   }
-  startTimer(timeLimitation);
+  getQuestion(timeLimitation);
 });
 // Quiz section script
-async function getQuestion() {
+async function getQuestion(timeLimitation) {
   try {
     let link = `js/${GEN_VAR.USER_CHOICE.topic}/${GEN_VAR.USER_CHOICE.complexity}.json`;
     let response = await fetch(link);
@@ -106,7 +106,9 @@ async function getQuestion() {
 
     insertingDataIntoHTMLTag(GEN_VAR.dataClone, GEN_VAR.index);
     creatingProgressBar();
+
     console.log("Success in loading data!");
+    startTimer(timeLimitation);
   } catch (error) {
     console.log(error);
   }
