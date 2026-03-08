@@ -49,6 +49,7 @@ main {
 }
 .welcome-illustration {
   margin-bottom: 1em;
+  width: auto;
 }
 .welcome-header {
   text-align: center;
