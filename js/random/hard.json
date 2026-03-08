@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "category": "random",
+    "difficulty": "hard",
+    "question": "What is the only state in the United States that is not officially a state, but a 'commonwealth'?",
+    "options": ["Texas", "Massachusetts", "California", "Florida"],
+    "correct": 1
+  },
+  {
+    "id": 2,
+    "category": "random",
+    "difficulty": "hard",
+    "question": "Which English king was defeated and killed at the Battle of Hastings in 1066?",
+    "options": [
+      "Edward the Confessor",
+      "Harold Godwinson",
+      "William the Conqueror",
+      "Richard the Lionheart"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 3,
+    "category": "random",
+    "difficulty": "hard",
+    "question": "What is the most abundant metal in the Earth's crust?",
+    "options": ["Iron", "Aluminum", "Copper", "Silicon"],
+    "correct": 1
+  },
+  {
+    "id": 4,
+    "category": "random",
+    "difficulty": "hard",
+    "question": "Which artist is known for the sculpture 'Unique Forms of Continuity in Space'?",
+    "options": [
+      "Umberto Boccioni",
+      "Auguste Rodin",
+      "Constantin Brancusi",
+      "Alberto Giacometti"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 5,
+    "category": "random",
+    "difficulty": "hard",
+    "question": "What is the official language of the African nation of Mozambique?",
+    "options": ["English", "French", "Portuguese", "Swahili"],
+    "correct": 2
+  },
+  {
+    "id": 6,
+    "category": "random",
+    "difficulty": "hard",
+    "question": "Which chemical element has the highest melting point?",
+    "options": ["Iron", "Tungsten", "Platinum", "Osmium"],
+    "correct": 1
+  },
+  {
+    "id": 7,
+    "category": "random",
+    "difficulty": "hard",
+    "question": "In which city is the headquarters of the International Court of Justice located?",
+    "options": ["Geneva", "Brussels", "The Hague", "Vienna"],
+    "correct": 2
+  },
+  {
+    "id": 8,
+    "category": "random",
+    "difficulty": "hard",
+    "question": "What is the rarest blood type in the world?",
+    "options": ["AB negative", "O negative", "Rh-null", "B positive"],
+    "correct": 2
+  },
+  {
+    "id": 9,
+    "category": "random",
+    "difficulty": "hard",
+    "question": "Which planet in our solar system has the shortest day (fastest rotation)?",
+    "options": ["Mars", "Jupiter", "Venus", "Mercury"],
+    "correct": 1
+  },
+  {
+    "id": 10,
+    "category": "random",
+    "difficulty": "hard",
+    "question": "Who was the first woman to win a Nobel Prize (1903)?",
+    "options": [
+      "Marie Curie",
+      "Mother Teresa",
+      "Ada Lovelace",
+      "Rosalind Franklin"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 11,
+    "category": "random",
+    "difficulty": "hard",
+    "question": "What is the capital city of Kazakhstan (since 2022)?",
+    "options": ["Almaty", "Astana", "Nur-Sultan", "Tashkent"],
+    "correct": 1
+  },
+  {
+    "id": 12,
+    "category": "random",
+    "difficulty": "hard",
+    "question": "Which battle is often cited as the turning point of the American Civil War?",
+    "options": [
+      "Battle of Antietam",
+      "Battle of Gettysburg",
+      "Battle of Bull Run",
+      "Battle of Shiloh"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 13,
+    "category": "random",
+    "difficulty": "hard",
+    "question": "How many time zones does Russia span?",
+    "options": ["9", "10", "11", "12"],
+    "correct": 2
+  },
+  {
+    "id": 14,
+    "category": "random",
+    "difficulty": "hard",
+    "question": "What is the name of the world's deepest lake?",
+    "options": [
+      "Lake Superior",
+      "Lake Baikal",
+      "Lake Tanganyika",
+      "Lake Victoria"
+    ],
+    "correct": 1
+  },
+  {
+    "id": 15,
+    "category": "random",
+    "difficulty": "hard",
+    "question": "Who composed the 'Brandenburg Concertos'?",
+    "options": [
+      "Wolfgang Amadeus Mozart",
+      "Ludwig van Beethoven",
+      "Johann Sebastian Bach",
+      "Antonio Vivaldi"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 16,
+    "category": "random",
+    "difficulty": "hard",
+    "question": "What is the scientific name for the common domestic cat?",
+    "options": ["Canis lupus", "Felis catus", "Panthera leo", "Ursus arctos"],
+    "correct": 1
+  },
+  {
+    "id": 17,
+    "category": "random",
+    "difficulty": "hard",
+    "question": "Which European country was the first to give women the right to vote (1906)?",
+    "options": ["United Kingdom", "Finland", "Norway", "France"],
+    "correct": 1
+  },
+  {
+    "id": 18,
+    "category": "random",
+    "difficulty": "hard",
+    "question": "What is the main acid found in the human stomach?",
+    "options": [
+      "Sulfuric acid",
+      "Nitric acid",
+      "Hydrochloric acid",
+      "Acetic acid"
+    ],
+    "correct": 2
+  },
+  {
+    "id": 19,
+    "category": "random",
+    "difficulty": "hard",
+    "question": "In economics, what does the acronym 'GNP' stand for?",
+    "options": [
+      "Gross National Product",
+      "General Net Profit",
+      "Global National Price",
+      "Gross Net Production"
+    ],
+    "correct": 0
+  },
+  {
+    "id": 20,
+    "category": "random",
+    "difficulty": "hard",
+    "question": "Which island is the largest by land area in the Mediterranean Sea?",
+    "options": ["Sardinia", "Cyprus", "Sicily", "Crete"],
+    "correct": 2
+  }
+]

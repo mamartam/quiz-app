@@ -30,7 +30,6 @@ body {
   background-color: var(--purple);
   color: var(--white);
   font-family: "Poppins", sans-serif;
-  position: relative;
 }
 main {
   width: 100%;
@@ -38,6 +37,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 /* WELCOME SECTION */
@@ -49,6 +49,7 @@ main {
 }
 .welcome-illustration {
   margin-bottom: 1em;
+  width: auto;
 }
 .welcome-header {
   text-align: center;
@@ -66,7 +67,6 @@ main {
 /* CHOOSE TOPIC SECTION */
 
 .rules-container {
-  /* background-color: red; */
   width: 100%;
   position: absolute;
   top: 1em;
@@ -75,7 +75,7 @@ main {
   display: flex;
   justify-content: end;
 }
-.reluse-btn {
+.rules-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,9 +87,8 @@ main {
   color: var(--purple);
   font-size: 1em;
   background-color: var(--white);
-  /* padding: 1em; */
 }
-.ruels-description {
+.rules-description {
   position: absolute;
   top: 0;
   background-color: var(--white);
@@ -101,27 +100,25 @@ main {
   border-radius: 1em;
   padding: 2em;
 }
-.ruels-description h3 {
+.rules-description h3 {
   margin: 1em 0;
 }
-.ruels-description p {
+.rules-description p {
   margin-bottom: 1em;
 }
-.ruels-description li {
+.rules-description li {
   display: flex;
   flex-direction: row;
   justify-content: start;
   align-items: start;
 }
-.ruels-description li img {
+.rules-description li img {
   width: 1em;
   margin-right: 0.5em;
 }
 
 .rules-close-btn-container {
-  /* background-color: red; */
   width: 100%;
-  /* padding: 1em; */
   display: flex;
   justify-content: end;
 }
@@ -241,6 +238,15 @@ main {
   justify-content: end;
   align-items: center;
 }
+.clock-container img {
+  display: block;
+  width: 25px;
+  height: 25px;
+  margin-left: 0.5em;
+}
+.last-seconds {
+  color: var(--red);
+}
 .question-container {
   background-color: var(--white);
   color: var(--dark-purple);
@@ -270,22 +276,52 @@ main {
 .option:hover {
   outline: 2px solid var(--orange);
 }
-/* .quiz-section .navigation-btns {
+.progress-bar-container {
   width: 100%;
-  height: 70px;
+  height: 15px;
+  background-color: #280a82;
   display: flex;
-  justify-content: end;
-  align-items: center;
-} */
-/* .next-question-btn,
-.finish-btn {
-  background-color: #ff9051;
-  border: none;
-  padding: 1.5em;
+  flex-direction: row;
   border-radius: 1em;
-  color: white;
-  font-weight: 700;
-} */
+  overflow: hidden;
+  gap: 0;
+}
+.bar-box {
+  width: 30px;
+  height: inherit;
+  flex-grow: 1;
+  margin: 0;
+  padding: 0;
+}
+.bar-color {
+  width: 100%;
+  height: inherit;
+  background-color: transparent;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+.bar-color.completed {
+  animation: animationForBarBox 1s linear;
+  width: 100%;
+  height: inherit;
+  background-color: var(--orange);
+}
+@keyframes animationForBarBox {
+  from {
+    width: 0px;
+    background-color: var(--orange);
+  }
+  to {
+    /* transform: scaleX(1); */
+    width: 100%;
+    background-color: var(--orange);
+  }
+}
 /* RESULT SECTION */
 .results-section {
   display: flex;
@@ -340,18 +376,18 @@ main {
   align-items: center;
 }
 .history-section::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
 }
-.front-end-result {
+div[class^="card front-end"] {
   background-color: var(--green);
 }
-.pop-culture-result {
+div[class^="card pop-culture"] {
   background-color: var(--orange);
   border: 2px solid var(--green);
   box-shadow: 0 5px 0px var(--green);
   color: var(--purple);
 }
-.random-result {
+div[class^="card random"] {
   background-color: var(--red);
   border: 2px solid var(--orange);
   box-shadow: 0 5px 0px var(--orange);
@@ -393,4 +429,20 @@ main {
 }
 .hide {
   display: none;
+}
+@media screen and (min-width: 600px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  main {
+    max-width: 500px;
+  }
+  .history-section {
+    width: 500px;
+  }
+  .rules-description {
+    max-width: 500px;
+  }
 }

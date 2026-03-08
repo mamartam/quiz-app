@@ -1,0 +1,167 @@
+[
+  {
+    "id": 1,
+    "category": "random",
+    "difficulty": "easy",
+    "question": "Which planet is known as the 'Red Planet'?",
+    "options": ["Venus", "Mars", "Jupiter", "Saturn"],
+    "correct": 1
+  },
+  {
+    "id": 2,
+    "category": "random",
+    "difficulty": "easy",
+    "question": "How many colors are there in a rainbow?",
+    "options": ["5", "6", "7", "8"],
+    "correct": 2
+  },
+  {
+    "id": 3,
+    "category": "random",
+    "difficulty": "easy",
+    "question": "Which animal is known as the 'King of the Jungle'?",
+    "options": ["Tiger", "Elephant", "Lion", "Gorilla"],
+    "correct": 2
+  },
+  {
+    "id": 4,
+    "category": "random",
+    "difficulty": "easy",
+    "question": "What is the largest ocean on Earth?",
+    "options": [
+      "Atlantic Ocean",
+      "Indian Ocean",
+      "Arctic Ocean",
+      "Pacific Ocean"
+    ],
+    "correct": 3
+  },
+  {
+    "id": 5,
+    "category": "random",
+    "difficulty": "easy",
+    "question": "Which country is famous for the Great Pyramid of Giza?",
+    "options": ["Greece", "Mexico", "Egypt", "Italy"],
+    "correct": 2
+  },
+  {
+    "id": 6,
+    "category": "random",
+    "difficulty": "easy",
+    "question": "What is the capital city of France?",
+    "options": ["Berlin", "Madrid", "Paris", "Rome"],
+    "correct": 2
+  },
+  {
+    "id": 7,
+    "category": "random",
+    "difficulty": "easy",
+    "question": "How many continents are there on Earth?",
+    "options": ["5", "6", "7", "8"],
+    "correct": 2
+  },
+  {
+    "id": 8,
+    "category": "random",
+    "difficulty": "easy",
+    "question": "Which gas do humans need to breathe to survive?",
+    "options": ["Nitrogen", "Oxygen", "Carbon Dioxide", "Hydrogen"],
+    "correct": 1
+  },
+  {
+    "id": 9,
+    "category": "random",
+    "difficulty": "easy",
+    "question": "What is the hardest natural substance on Earth?",
+    "options": ["Gold", "Iron", "Diamond", "Stone"],
+    "correct": 2
+  },
+  {
+    "id": 10,
+    "category": "random",
+    "difficulty": "easy",
+    "question": "Which animal is the tallest in the world?",
+    "options": ["Elephant", "Giraffe", "Ostrich", "Blue Whale"],
+    "correct": 1
+  },
+  {
+    "id": 11,
+    "category": "random",
+    "difficulty": "easy",
+    "question": "What is the name of the long-necked dinosaur?",
+    "options": ["T-Rex", "Brachiosaurus", "Velociraptor", "Stegosaurus"],
+    "correct": 1
+  },
+  {
+    "id": 12,
+    "category": "random",
+    "difficulty": "easy",
+    "question": "In which season do leaves typically fall from trees?",
+    "options": ["Spring", "Summer", "Autumn", "Winter"],
+    "correct": 2
+  },
+  {
+    "id": 13,
+    "category": "random",
+    "difficulty": "easy",
+    "question": "Which fruit is famous for having its seeds on the outside?",
+    "options": ["Apple", "Strawberry", "Banana", "Grapes"],
+    "correct": 1
+  },
+  {
+    "id": 14,
+    "category": "random",
+    "difficulty": "easy",
+    "question": "How many legs does a spider have?",
+    "options": ["6", "8", "10", "12"],
+    "correct": 1
+  },
+  {
+    "id": 15,
+    "category": "random",
+    "difficulty": "easy",
+    "question": "What is the freezing point of water in Celsius?",
+    "options": ["-10°C", "0°C", "32°C", "100°C"],
+    "correct": 1
+  },
+  {
+    "id": 16,
+    "category": "random",
+    "difficulty": "easy",
+    "question": "Which organ pumps blood through the human body?",
+    "options": ["Lungs", "Brain", "Heart", "Liver"],
+    "correct": 2
+  },
+  {
+    "id": 17,
+    "category": "random",
+    "difficulty": "easy",
+    "question": "What is the main ingredient in chocolate?",
+    "options": ["Milk", "Sugar", "Cocoa beans", "Vanilla"],
+    "correct": 2
+  },
+  {
+    "id": 18,
+    "category": "random",
+    "difficulty": "easy",
+    "question": "Which bird is often a symbol of peace?",
+    "options": ["Eagle", "Owl", "Dove", "Parrot"],
+    "correct": 2
+  },
+  {
+    "id": 19,
+    "category": "random",
+    "difficulty": "easy",
+    "question": "Which country is home to the Kangaroo?",
+    "options": ["Brazil", "Australia", "India", "South Africa"],
+    "correct": 1
+  },
+  {
+    "id": 20,
+    "category": "random",
+    "difficulty": "easy",
+    "question": "What is the largest planet in our solar system?",
+    "options": ["Earth", "Saturn", "Jupiter", "Neptune"],
+    "correct": 2
+  }
+]
