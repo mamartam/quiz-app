@@ -197,8 +197,8 @@ export function creatinfResultsCards() {
         `${GEN_VAR.quizTopicsArray[i]}-${GEN_VAR.quizComplexityArray[j]}`,
       );
       historySection.innerHTML += `<div class="card ${GEN_VAR.quizTopicsArray[i]}-${GEN_VAR.quizComplexityArray[j]}">
-            <h4>${GEN_VAR.quizTopicsArray[i]} <img src="./assets/images/${GEN_VAR.quizTopicsArray[i]}-icon.svg" alt="" /></h4>
-            <p>${GEN_VAR.quizComplexityArray[j]} Level</p>
+            <h4>${GEN_VAR.quizTopicsArray[i][0].toUpperCase()}${GEN_VAR.quizTopicsArray[i].slice(1)} <img src="./assets/images/${GEN_VAR.quizTopicsArray[i]}-icon.svg" alt="" /></h4>
+            <p>${GEN_VAR.quizComplexityArray[j][0].toUpperCase()}${GEN_VAR.quizComplexityArray[j].slice(1)} Level</p>
             <p class="user-result hide"><span class="user-score"></span>/10</p>
             <div class="empty-result">
               <img
